@@ -4,351 +4,442 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>BID // Bureau of Internal Defense</title>
+    <title>BID // Bureau of International Defense</title>
 
     <style>
         * {
             box-sizing: border-box;
         }
 
-        body {
+        html, body {
             margin: 0;
-            background: #080a0c;
-            color: #d9dde0;
-            font-family: Arial, sans-serif;
+            width: 100%;
+            height: 100%;
         }
+
+        body {
+            background: #080a0c;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 650px;
+
+            background-image:
+                linear-gradient(
+                    rgba(5, 7, 9, 0.68),
+                    rgba(5, 7, 9, 0.78)
+                ),
+                url("bid-building.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
 
         header {
-            padding: 25px 50px;
-            border-bottom: 1px solid #252a2e;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 32px 50px;
+
             display: flex;
+            align-items: flex-start;
             justify-content: space-between;
-            align-items: center;
+
+            z-index: 10;
         }
 
-        .logo {
-            font-size: 32px;
-            letter-spacing: 8px;
-            font-weight: bold;
+
+        /* LOGO */
+
+        .brand {
+            text-decoration: none;
+            color: white;
+
+            line-height: 1;
         }
+
+        .brand-main {
+            display: block;
+
+            font-size: 30px;
+            font-weight: 700;
+
+            letter-spacing: 7px;
+        }
+
+        .brand-sub {
+            display: block;
+
+            margin-top: 8px;
+
+            font-size: 9px;
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+            color: #a5a9ad;
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 34px;
+
+            padding-top: 4px;
+        }
+
+        nav a {
+            position: relative;
+
+            color: #d6d8da;
+
+            text-decoration: none;
+
+            font-size: 10px;
+            letter-spacing: 2px;
+
+            transition: color 0.2s ease;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 1px;
+
+            background: #b91c1c;
+
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           MAIN CONTENT
+        ========================= */
+
+        .content {
+            position: absolute;
+
+            left: 8%;
+            top: 50%;
+
+            transform: translateY(-42%);
+
+            max-width: 650px;
+        }
+
+
+        .heading {
+            margin: 0;
+
+            font-size: clamp(55px, 7vw, 105px);
+
+            font-weight: 700;
+
+            line-height: 0.95;
+
+            letter-spacing: 5px;
+        }
+
+        .heading span {
+            display: block;
+        }
+
+
+        /* RED LINE */
+
+        .red-line {
+            width: 75px;
+            height: 2px;
+
+            background: #b91c1c;
+
+            margin: 32px 0;
+        }
+
+
+        /* DESCRIPTION */
+
+        .description {
+            max-width: 520px;
+
+            color: #b1b5b8;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            letter-spacing: 0.3px;
+        }
+
+
+        /* LEARN MORE */
+
+        .learn-more {
+            display: inline-flex;
+
+            align-items: center;
+
+            margin-top: 28px;
+
+            padding: 14px 24px;
+
+            border: 1px solid rgba(255,255,255,0.35);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            transition:
+                background 0.2s ease,
+                border-color 0.2s ease;
+        }
+
+        .learn-more:hover {
+            background: #b91c1c;
+            border-color: #b91c1c;
+        }
+
+
+        /* =========================
+           BOTTOM INFORMATION
+        ========================= */
+
+        .bottom-info {
+            position: absolute;
+
+            bottom: 28px;
+            left: 50px;
+
+            color: #6f7478;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
 
         .status {
-            color: #b91c1c;
-            font-size: 12px;
+            position: absolute;
+
+            bottom: 28px;
+            right: 50px;
+
+            color: #777d81;
+
+            font-size: 8px;
+
             letter-spacing: 2px;
         }
 
-        main {
-            min-height: calc(100vh - 130px);
-            padding: 80px 50px;
-            max-width: 1200px;
-            margin: auto;
-        }
+        .status-dot {
+            display: inline-block;
 
-        .classified {
-            color: #b91c1c;
-            letter-spacing: 4px;
-            font-size: 12px;
-        }
+            width: 5px;
+            height: 5px;
 
-        h1 {
-            font-size: clamp(50px, 9vw, 120px);
-            margin: 20px 0;
-            letter-spacing: 10px;
-        }
+            margin-right: 7px;
 
-        .subtitle {
-            max-width: 600px;
-            color: #858b90;
-            line-height: 1.8;
-        }
+            border-radius: 50%;
 
-        .line {
-            width: 100px;
-            height: 2px;
             background: #b91c1c;
-            margin: 30px 0;
         }
 
-        /* DATABASE NAVIGATION */
 
-        .database {
-            margin-top: 70px;
-        }
+        /* =========================
+           MOBILE
+        ========================= */
 
-        .database-title {
-            color: #555b60;
-            font-size: 11px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
+        @media (max-width: 900px) {
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            max-width: 800px;
-        }
-
-        .card {
-            border: 1px solid #252a2e;
-            background: #0c0f12;
-            padding: 25px;
-            text-decoration: none;
-            color: #d9dde0;
-            transition: 0.2s;
-        }
-
-        .card:hover {
-            border-color: #b91c1c;
-            background: #101316;
-            transform: translateY(-2px);
-        }
-
-        .card-number {
-            color: #b91c1c;
-            font-size: 10px;
-            letter-spacing: 2px;
-        }
-
-        .card-title {
-            margin-top: 12px;
-            font-size: 18px;
-            letter-spacing: 2px;
-        }
-
-        .card-description {
-            margin-top: 10px;
-            color: #686f74;
-            font-size: 12px;
-            line-height: 1.6;
-        }
-
-        /* SYSTEM INFORMATION */
-
-        .system {
-            margin-top: 60px;
-            border-top: 1px solid #252a2e;
-            padding-top: 25px;
-            max-width: 800px;
-        }
-
-        .system-title {
-            color: #555b60;
-            font-size: 10px;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-
-        .system-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid #15191c;
-            font-size: 11px;
-        }
-
-        .system-label {
-            color: #555b60;
-        }
-
-        .system-value {
-            color: #858b90;
-        }
-
-        .online {
-            color: #4ade80;
-        }
-
-        footer {
-            padding: 20px 50px;
-            border-top: 1px solid #252a2e;
-            color: #555b60;
-            font-size: 11px;
-            letter-spacing: 2px;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 700px) {
             header {
-                padding: 20px;
+                padding: 25px 25px;
             }
 
-            main {
-                padding: 60px 20px;
+            nav {
+                gap: 15px;
             }
 
-            footer {
-                padding: 20px;
+            nav a {
+                font-size: 8px;
             }
 
-            .grid {
-                grid-template-columns: 1fr;
+            .content {
+                left: 25px;
+                right: 25px;
+            }
+
+            .bottom-info {
+                left: 25px;
             }
 
             .status {
-                font-size: 9px;
-            }
-
-            h1 {
-                letter-spacing: 5px;
+                right: 25px;
             }
         }
+
+
+        @media (max-width: 650px) {
+
+            header {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                gap: 15px 20px;
+            }
+
+            .heading {
+                font-size: 55px;
+            }
+
+            .bottom-info,
+            .status {
+                display: none;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">BID</div>
+<div class="hero">
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <a href="index.html" class="brand">
+
+            <span class="brand-main">
+                BID
+            </span>
+
+            <span class="brand-sub">
+                BUREAU OF INTERNATIONAL DEFENSE
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="index.html">HOME</a>
+
+            <a href="about.html">ABOUT</a>
+
+            <a href="divisions.html">DIVISIONS</a>
+
+            <a href="database.html">DATABASE</a>
+
+            <a href="locations.html">LOCATIONS</a>
+
+            <a href="archive.html">ARCHIVE</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main class="content">
+
+        <h1 class="heading">
+
+            <span>PROTECT.</span>
+
+            <span>CONTROL.</span>
+
+            <span>PREVENT.</span>
+
+        </h1>
+
+
+        <div class="red-line"></div>
+
+
+        <p class="description">
+
+            The Bureau of International Defense operates beyond
+            conventional jurisdiction to protect global security,
+            maintain order, and prevent threats before they become
+            catastrophes.
+
+        </p>
+
+
+        <a href="about.html" class="learn-more">
+
+            LEARN MORE&nbsp;&nbsp; →
+
+        </a>
+
+    </main>
+
+
+    <!-- BOTTOM INFORMATION -->
+
+    <div class="bottom-info">
+
+        BID // CENTRAL COMMAND
+
+    </div>
+
 
     <div class="status">
-        ● SYSTEM ONLINE
-    </div>
-</header>
 
+        <span class="status-dot"></span>
 
-<main>
+        SYSTEM OPERATIONAL
 
-    <div class="classified">
-        BUREAU OF INTERNAL DEFENSE
     </div>
 
-    <h1>WELCOME.</h1>
 
-    <div class="line"></div>
-
-    <p class="subtitle">
-        CENTRAL DATABASE // AUTHORIZED PERSONNEL ONLY
-        <br><br>
-        Access to classified information is monitored and recorded.
-        Unauthorized access will be reported to Internal Security.
-    </p>
-
-
-    <!-- DATABASE -->
-
-    <section class="database">
-
-        <div class="database-title">
-            DATABASE DIRECTORY //
-        </div>
-
-        <div class="grid">
-
-            <a class="card" href="personnel.html">
-
-                <div class="card-number">
-                    01 // PERSONNEL
-                </div>
-
-                <div class="card-title">
-                    PERSONNEL FILES
-                </div>
-
-                <div class="card-description">
-                    Personnel records, identification files,
-                    affiliations, assignments and psychological evaluations.
-                </div>
-
-            </a>
-
-
-            <a class="card" href="organizations.html">
-
-                <div class="card-number">
-                    02 // ORGANIZATIONS
-                </div>
-
-                <div class="card-title">
-                    ORGANIZATIONS
-                </div>
-
-                <div class="card-description">
-                    Government agencies, factions, organizations
-                    and other entities of interest.
-                </div>
-
-            </a>
-
-
-            <a class="card" href="history.html">
-
-                <div class="card-number">
-                    03 // HISTORY
-                </div>
-
-                <div class="card-title">
-                    HISTORICAL RECORDS
-                </div>
-
-                <div class="card-description">
-                    Major events, incidents, conflicts and
-                    documented historical records.
-                </div>
-
-            </a>
-
-
-            <a class="card" href="archives.html">
-
-                <div class="card-number">
-                    04 // ARCHIVES
-                </div>
-
-                <div class="card-title">
-                    CLASSIFIED ARCHIVES
-                </div>
-
-                <div class="card-description">
-                    Mission reports, case files, internal documents
-                    and restricted records.
-                </div>
-
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- SYSTEM INFORMATION -->
-
-    <section class="system">
-
-        <div class="system-title">
-            SYSTEM INFORMATION //
-        </div>
-
-        <div class="system-row">
-            <span class="system-label">DATABASE STATUS</span>
-            <span class="system-value online">ONLINE</span>
-        </div>
-
-        <div class="system-row">
-            <span class="system-label">SECURITY STATUS</span>
-            <span class="system-value">ACTIVE</span>
-        </div>
-
-        <div class="system-row">
-            <span class="system-label">CLEARANCE</span>
-            <span class="system-value">AUTHORIZED</span>
-        </div>
-
-        <div class="system-row">
-            <span class="system-label">RECORDS INDEXED</span>
-            <span class="system-value">0047</span>
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer>
-    BID // INTERNAL DATABASE // SECURITY CLEARANCE REQUIRED
-</footer>
+</div>
 
 </body>
 </html>
