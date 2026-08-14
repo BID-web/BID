@@ -1,0 +1,2585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ARCHIVE // BID</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #080a0c;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 32px 50px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #1d2125;
+        }
+
+        .brand {
+            text-decoration: none;
+            color: white;
+            line-height: 1;
+        }
+
+        .brand-main {
+            display: block;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 30px;
+            font-weight: 700;
+
+            letter-spacing: 7px;
+        }
+
+        .brand-sub {
+            display: block;
+
+            margin-top: 8px;
+
+            font-size: 9px;
+            letter-spacing: 2px;
+
+            color: #777d81;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+            padding-top: 4px;
+        }
+
+        nav a {
+            position: relative;
+
+            color: #777d81;
+
+            text-decoration: none;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+            letter-spacing: 2px;
+
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: white;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 1px;
+
+            background: #b91c1c;
+
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1500px;
+
+            margin: auto;
+
+            padding: 90px 60px 120px;
+        }
+
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+
+        .page-header {
+            margin-bottom: 55px;
+        }
+
+        .eyebrow {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(50px, 7vw, 95px);
+
+            letter-spacing: 5px;
+
+            line-height: 0.95;
+        }
+
+        .red-line {
+            width: 75px;
+            height: 2px;
+
+            background: #b91c1c;
+
+            margin-top: 35px;
+        }
+
+
+        /* =========================
+           ARCHIVE INTERFACE
+        ========================= */
+
+        .archive-interface {
+            display: grid;
+
+            grid-template-columns: 390px 1fr;
+
+            min-height: 680px;
+
+            border-top: 1px solid #252a2e;
+            border-bottom: 1px solid #252a2e;
+        }
+
+
+        /* =========================
+           LEFT ARCHIVE DIRECTORY
+        ========================= */
+
+        .archive-directory {
+            border-right: 1px solid #252a2e;
+
+            background: #0a0d0f;
+        }
+
+
+        /* =========================
+           FILTER TABS
+        ========================= */
+
+        .tabs {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            border-bottom: 1px solid #252a2e;
+        }
+
+        .tab {
+            padding: 20px 10px;
+
+            border: none;
+            border-right: 1px solid #252a2e;
+
+            background: transparent;
+
+            color: #5f666b;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .tab:last-child {
+            border-right: none;
+        }
+
+        .tab:hover {
+            color: white;
+        }
+
+        .tab.active {
+            color: white;
+
+            background: #101417;
+
+            box-shadow: inset 0 -2px 0 #b91c1c;
+        }
+
+
+        /* =========================
+           DIRECTORY HEADER
+        ========================= */
+
+        .directory-header {
+            padding: 20px;
+
+            border-bottom: 1px solid #1d2125;
+
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           ARCHIVE LIST
+        ========================= */
+
+        .archive-list {
+            padding: 10px;
+        }
+
+
+        /* =========================
+           ARCHIVE ENTRY
+        ========================= */
+
+        .archive-entry {
+            position: relative;
+
+            width: 100%;
+
+            padding: 20px 18px 20px 25px;
+
+            margin-bottom: 5px;
+
+            border: none;
+            border-left: 1px solid #252a2e;
+
+            background: transparent;
+
+            color: white;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .archive-entry::before {
+            content: "";
+
+            position: absolute;
+
+            left: -4px;
+            top: 25px;
+
+            width: 7px;
+            height: 7px;
+
+            border: 1px solid #555b60;
+
+            background: #0a0d0f;
+
+            transform: rotate(45deg);
+
+            transition: 0.2s ease;
+        }
+
+        .archive-entry:hover {
+            background: #0e1215;
+
+            border-left-color: #444b50;
+        }
+
+        .archive-entry:hover::before {
+            border-color: #b91c1c;
+            background: #b91c1c;
+        }
+
+        .archive-entry.selected {
+            background: #111518;
+
+            border-left-color: #b91c1c;
+        }
+
+        .archive-entry.selected::before {
+            border-color: #b91c1c;
+            background: #b91c1c;
+        }
+
+
+        /* =========================
+           ENTRY DATE
+        ========================= */
+
+        .entry-date {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           ENTRY TITLE
+        ========================= */
+
+        .entry-title {
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================
+           ENTRY DESCRIPTION
+        ========================= */
+
+        .entry-description {
+            margin-top: 8px;
+
+            color: #686f74;
+
+            font-size: 9px;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           RIGHT DETAIL PANEL
+        ========================= */
+
+        .details {
+            position: relative;
+
+            background: #0b0e10;
+
+            padding: 45px 55px;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           PLACEHOLDER
+        ========================= */
+
+        .detail-placeholder {
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #41474b;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           DETAIL CONTENT
+        ========================= */
+
+        .detail-content {
+            display: none;
+        }
+
+        .detail-content.visible {
+            display: block;
+        }
+
+
+        /* =========================
+           DETAIL TOP
+        ========================= */
+
+        .detail-top {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: flex-start;
+
+            gap: 30px;
+
+            padding-bottom: 30px;
+
+            border-bottom: 1px solid #252a2e;
+        }
+
+        .detail-category {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+        .detail-name {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(30px, 4vw, 55px);
+
+            letter-spacing: 3px;
+
+            line-height: 1.1;
+        }
+
+        .detail-role {
+            margin-top: 10px;
+
+            color: #777d81;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           STATUS
+        ========================= */
+
+        .detail-status {
+            padding: 10px 15px;
+
+            border: 1px solid #30363a;
+
+            color: #777d81;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================
+           DOCUMENT INFORMATION
+        ========================= */
+
+        .document-profile {
+            padding-top: 35px;
+
+            max-width: 950px;
+        }
+
+        .document-info {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            border-top: 1px solid #252a2e;
+        }
+
+        .info-item {
+            min-height: 82px;
+
+            padding: 17px 15px;
+
+            border-bottom: 1px solid #252a2e;
+            border-right: 1px solid #252a2e;
+        }
+
+        .info-item:nth-child(even) {
+            border-right: none;
+        }
+
+        .info-label {
+            margin-bottom: 8px;
+
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 7px;
+
+            letter-spacing: 2px;
+        }
+
+        .info-value {
+            color: #d9dde0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+        .clearance-black {
+            color: #d9dde0;
+
+            font-weight: 600;
+        }
+
+        .clearance-red {
+            color: #b91c1c;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           DOCUMENT BODY
+        ========================= */
+
+        .document-body {
+            padding-top: 35px;
+        }
+
+        .detail-section {
+            margin-bottom: 35px;
+        }
+
+        .detail-label {
+            margin-bottom: 10px;
+
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+        }
+
+        .detail-text {
+            margin: 0;
+
+            color: #9ca2a6;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================
+           DOCUMENT FOOTER
+        ========================= */
+
+        .document-footer {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            margin-top: 45px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #252a2e;
+        }
+
+        .document-classification {
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 7px;
+
+            letter-spacing: 2px;
+        }
+
+        .document-stamp {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           RESTRICTED ACCESS
+        ========================= */
+
+        .restricted-access {
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            margin-top: 45px;
+
+            padding: 20px;
+
+            border: 1px solid #302022;
+
+            background: #0d0b0c;
+        }
+
+        .restricted-icon {
+            width: 40px;
+            height: 40px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border: 1px solid #552226;
+
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 12px;
+        }
+
+        .restricted-text {
+            flex: 1;
+        }
+
+        .restricted-title {
+            color: #d9dde0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+        }
+
+        .restricted-subtitle {
+            margin-top: 7px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #1d2125;
+
+            padding: 20px 50px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            header {
+                padding: 25px;
+            }
+
+            nav {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: flex-end;
+            }
+
+            main {
+                padding: 70px 30px 90px;
+            }
+
+            .archive-interface {
+                grid-template-columns: 320px 1fr;
+            }
+
+            .details {
+                padding: 35px;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 25px;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            main {
+                padding: 60px 20px 80px;
+            }
+
+            .archive-interface {
+                display: block;
+            }
+
+            .archive-directory {
+                border-right: none;
+
+                border-bottom: 1px solid #252a2e;
+            }
+
+            .details {
+                min-height: 600px;
+            }
+
+            .detail-top {
+                flex-direction: column;
+            }
+
+            .document-info {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: none;
+            }
+
+            .document-footer {
+                align-items: flex-start;
+
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .restricted-access {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+            footer {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-main">
+            BID
+        </span>
+
+        <span class="brand-sub">
+            BUREAU OF INTERNATIONAL DEFENSE
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="divisions.html">
+            DIVISIONS
+        </a>
+
+        <a href="database.html">
+            DATABASE
+        </a>
+
+        <a href="locations.html">
+            LOCATIONS
+        </a>
+
+        <a href="archive.html" class="active">
+            ARCHIVE
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+    <section class="page-header">
+
+        <div class="eyebrow">
+            BID // ARCHIVAL RECORDS
+        </div>
+
+        <h1>
+            ARCHIVE
+        </h1>
+
+        <div class="red-line"></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ARCHIVE INTERFACE
+    ========================= -->
+
+    <section class="archive-interface">
+
+
+        <!-- =========================
+             LEFT DIRECTORY
+        ========================= -->
+
+        <div class="archive-directory">
+
+
+            <div class="tabs">
+
+                <button
+                    class="tab active"
+                    onclick="showTab('history', this)"
+                >
+                    HISTORY
+                </button>
+
+                <button
+                    class="tab"
+                    onclick="showTab('incidents', this)"
+                >
+                    INCIDENTS
+                </button>
+
+                <button
+                    class="tab"
+                    onclick="showTab('documents', this)"
+                >
+                    DOCUMENTS
+                </button>
+
+            </div>
+
+
+            <div
+                class="directory-header"
+                id="directory-header"
+            >
+                HISTORY // CHRONOLOGY
+            </div>
+
+
+
+            <!-- =========================
+                 HISTORY
+            ========================= -->
+
+            <div
+                class="archive-list"
+                id="history-list"
+            >
+
+
+                <button
+                    class="archive-entry selected"
+                    onclick="showDetail('history-1976', this)"
+                >
+
+                    <div class="entry-date">
+                        1976
+                    </div>
+
+                    <div class="entry-title">
+                        BID ESTABLISHED
+                    </div>
+
+                    <div class="entry-description">
+                        Bureau of International Defense formally established.
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('history-1983', this)"
+                >
+
+                    <div class="entry-date">
+                        1983
+                    </div>
+
+                    <div class="entry-title">
+                        FIELD OPERATIONS DIVISION FORMED
+                    </div>
+
+                    <div class="entry-description">
+                        Initial centralized field operative program authorized.
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('history-1991', this)"
+                >
+
+                    <div class="entry-date">
+                        1991
+                    </div>
+
+                    <div class="entry-title">
+                        INTERNATIONAL EXPANSION
+                    </div>
+
+                    <div class="entry-description">
+                        BID establishes permanent operational presence overseas.
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('history-2004', this)"
+                >
+
+                    <div class="entry-date">
+                        2004
+                    </div>
+
+                    <div class="entry-title">
+                        BLACK CLEARANCE PROTOCOL
+                    </div>
+
+                    <div class="entry-description">
+                        New high-level personnel classification system introduced.
+                    </div>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 INCIDENTS
+            ========================= -->
+
+            <div
+                class="archive-list"
+                id="incidents-list"
+                style="display:none;"
+            >
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('incident-001', this)"
+                >
+
+                    <div class="entry-date">
+                        ██ / ██ / 20██
+                    </div>
+
+                    <div class="entry-title">
+                        INCIDENT [REDACTED]
+                    </div>
+
+                    <div class="entry-description">
+                        Operational incident currently under review.
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('incident-002', this)"
+                >
+
+                    <div class="entry-date">
+                        ██ / ██ / 20██
+                    </div>
+
+                    <div class="entry-title">
+                        FACILITY BREACH
+                    </div>
+
+                    <div class="entry-description">
+                        Unauthorized access detected at a BID facility.
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('incident-003', this)"
+                >
+
+                    <div class="entry-date">
+                        ██ / ██ / 20██
+                    </div>
+
+                    <div class="entry-title">
+                        OPERATIONAL LOSS
+                    </div>
+
+                    <div class="entry-description">
+                        Personnel and mission data remain restricted.
+                    </div>
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 DOCUMENTS
+            ========================= -->
+
+            <div
+                class="archive-list"
+                id="documents-list"
+                style="display:none;"
+            >
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('document-001', this)"
+                >
+
+                    <div class="entry-date">
+                        DOCUMENT // 001
+                    </div>
+
+                    <div class="entry-title">
+                        BID FOUNDING CHARTER
+                    </div>
+
+                    <div class="entry-description">
+                        Foundational document establishing BID authority.
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('document-002', this)"
+                >
+
+                    <div class="entry-date">
+                        DOCUMENT // 002
+                    </div>
+
+                    <div class="entry-title">
+                        FIELD OPERATIONS PROTOCOL
+                    </div>
+
+                    <div class="entry-description">
+                        Operational guidelines for authorized field personnel.
+                    </div>
+
+                </button>
+
+
+                <button
+                    class="archive-entry"
+                    onclick="showDetail('document-003', this)"
+                >
+
+                    <div class="entry-date">
+                        DOCUMENT // 003
+                    </div>
+
+                    <div class="entry-title">
+                        CLEARANCE DIRECTIVE
+                    </div>
+
+                    <div class="entry-description">
+                        Classification and access authorization directive.
+                    </div>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             RIGHT DETAIL PANEL
+        ========================= -->
+
+        <div class="details">
+
+
+            <div
+                class="detail-placeholder"
+                id="detail-placeholder"
+                style="display:none;"
+            >
+                SELECT AN ARCHIVE RECORD TO VIEW
+            </div>
+
+
+
+            <!-- ==================================================
+                 HISTORY 1976
+            ================================================== -->
+
+            <div
+                class="detail-content visible"
+                id="history-1976"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            HISTORY // 1976
+                        </div>
+
+                        <h2 class="detail-name">
+                            BID ESTABLISHED
+                        </h2>
+
+                        <div class="detail-role">
+                            FOUNDING RECORD
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        HISTORICAL
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                HIS-1976-001
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                BID FOUNDING RECORD
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                1976
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value">
+                                PUBLIC
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                The Bureau of International Defense was
+                                formally established in 1976 as an
+                                international defense organization
+                                operating under classified governmental
+                                authorization.
+
+                                <br><br>
+
+                                The Bureau's original mandate was the
+                                identification, containment, and response
+                                to threats exceeding the operational
+                                capabilities of conventional defense
+                                agencies.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="document-footer">
+
+                            <div class="document-classification">
+                                ARCHIVE // HISTORICAL RECORD
+                            </div>
+
+                            <div class="document-stamp">
+                                VERIFIED
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 HISTORY 1983
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="history-1983"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            HISTORY // 1983
+                        </div>
+
+                        <h2 class="detail-name">
+                            FIELD OPERATIONS DIVISION FORMED
+                        </h2>
+
+                        <div class="detail-role">
+                            ORGANIZATIONAL RECORD
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        HISTORICAL
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                HIS-1983-004
+                            </div>
+                        </div>
+
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                FIELD OPERATIONS DIRECTIVE
+                            </div>
+                        </div>
+
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                1983
+                            </div>
+                        </div>
+
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value">
+                                WHITE
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                Following a period of rapid expansion,
+                                BID established a dedicated Field
+                                Operations Division to coordinate
+                                personnel deployed outside Bureau
+                                facilities.
+
+                                <br><br>
+
+                                The division would later become
+                                responsible for specialized operatives,
+                                tactical response teams, and long-range
+                                field assignments.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 HISTORY 1991
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="history-1991"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            HISTORY // 1991
+                        </div>
+
+                        <h2 class="detail-name">
+                            INTERNATIONAL EXPANSION
+                        </h2>
+
+                        <div class="detail-role">
+                            ORGANIZATIONAL RECORD
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        HISTORICAL
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                HIS-1991-011
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                INTERNATIONAL OPERATIONS DIRECTIVE
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                1991
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value">
+                                BLUE
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                BID expanded its operational footprint
+                                beyond its original jurisdiction,
+                                establishing permanent overseas
+                                facilities and regional command
+                                structures.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 HISTORY 2004
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="history-2004"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            HISTORY // 2004
+                        </div>
+
+                        <h2 class="detail-name">
+                            BLACK CLEARANCE PROTOCOL
+                        </h2>
+
+                        <div class="detail-role">
+                            SECURITY DIRECTIVE
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        RESTRICTED
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                SEC-2004-017
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                BLACK CLEARANCE DIRECTIVE
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                2004
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value clearance-black">
+                                BLACK
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                A revised security classification
+                                system was introduced following
+                                internal review of sensitive
+                                operational material.
+
+                                <br><br>
+
+                                BLACK clearance was designated for
+                                personnel requiring access to
+                                restricted operational intelligence,
+                                classified facilities, and select
+                                special operations records.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="restricted-access">
+
+                            <div class="restricted-icon">
+                                //
+                            </div>
+
+                            <div class="restricted-text">
+
+                                <div class="restricted-title">
+                                    RESTRICTED ARCHIVE RECORD
+                                </div>
+
+                                <div class="restricted-subtitle">
+                                    ADDITIONAL INFORMATION REQUIRES
+                                    BLACK CLEARANCE
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 INCIDENT 001
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="incident-001"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            INCIDENT // 001
+                        </div>
+
+                        <h2 class="detail-name">
+                            INCIDENT [REDACTED]
+                        </h2>
+
+                        <div class="detail-role">
+                            INCIDENT REPORT
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        SEALED
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                INC-001
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                INCIDENT [REDACTED]
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                ██ / ██ / 20██
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value clearance-red">
+                                OMEGA
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                This incident record has been sealed
+                                by BID Internal Security.
+
+                                <br><br>
+
+                                Details concerning personnel,
+                                location, operational circumstances,
+                                and resulting actions remain
+                                restricted.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="restricted-access">
+
+                            <div class="restricted-icon">
+                                //
+                            </div>
+
+                            <div class="restricted-text">
+
+                                <div class="restricted-title">
+                                    SEALED INCIDENT RECORD
+                                </div>
+
+                                <div class="restricted-subtitle">
+                                    AUTHORIZED PERSONNEL ONLY
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 INCIDENT 002
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="incident-002"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            INCIDENT // 002
+                        </div>
+
+                        <h2 class="detail-name">
+                            FACILITY BREACH
+                        </h2>
+
+                        <div class="detail-role">
+                            SECURITY INCIDENT
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        RESTRICTED
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                INC-002
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                FACILITY BREACH REPORT
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                ██ / ██ / 20██
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value clearance-black">
+                                BLACK
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                Unauthorized access was detected
+                                within a BID-controlled facility.
+
+                                <br><br>
+
+                                Security response procedures were
+                                initiated. The identity and motive
+                                of the intruding party remain
+                                classified.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 INCIDENT 003
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="incident-003"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            INCIDENT // 003
+                        </div>
+
+                        <h2 class="detail-name">
+                            OPERATIONAL LOSS
+                        </h2>
+
+                        <div class="detail-role">
+                            FIELD INCIDENT
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        SEALED
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                INC-003
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                OPERATIONAL LOSS REPORT
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                ██ / ██ / 20██
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value clearance-red">
+                                OMEGA
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                Operational loss recorded during
+                                an active BID deployment.
+
+                                <br><br>
+
+                                Mission details and personnel
+                                status remain restricted pending
+                                internal review.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 DOCUMENT 001
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="document-001"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            DOCUMENT // 001
+                        </div>
+
+                        <h2 class="detail-name">
+                            BID FOUNDING CHARTER
+                        </h2>
+
+                        <div class="detail-role">
+                            FOUNDATIONAL DOCUMENT
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        VERIFIED
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                DOC-001
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                BID FOUNDING CHARTER
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                1976
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value">
+                                PUBLIC
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                Foundational documentation
+                                establishing the Bureau of
+                                International Defense and defining
+                                its original mandate.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 DOCUMENT 002
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="document-002"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            DOCUMENT // 002
+                        </div>
+
+                        <h2 class="detail-name">
+                            FIELD OPERATIONS PROTOCOL
+                        </h2>
+
+                        <div class="detail-role">
+                            OPERATIONAL DOCUMENT
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        ACTIVE
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                DOC-002
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                FIELD OPERATIONS PROTOCOL
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                1983
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value">
+                                BLUE
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                Standardized operational guidelines
+                                governing the deployment and conduct
+                                of BID field personnel.
+
+                                <br><br>
+
+                                Current revisions supersede all
+                                previous versions of this document.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 DOCUMENT 003
+            ================================================== -->
+
+            <div
+                class="detail-content"
+                id="document-003"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            DOCUMENT // 003
+                        </div>
+
+                        <h2 class="detail-name">
+                            CLEARANCE DIRECTIVE
+                        </h2>
+
+                        <div class="detail-role">
+                            SECURITY DOCUMENT
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        RESTRICTED
+                    </div>
+
+                </div>
+
+
+                <div class="document-profile">
+
+                    <div class="document-info">
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DOCUMENT ID
+                            </div>
+
+                            <div class="info-value">
+                                DOC-003
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                TITLE
+                            </div>
+
+                            <div class="info-value">
+                                CLEARANCE DIRECTIVE
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                DATE
+                            </div>
+
+                            <div class="info-value">
+                                2004
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value clearance-black">
+                                BLACK
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-body">
+
+                        <div class="detail-section">
+
+                            <div class="detail-label">
+                                DESCRIPTION
+                            </div>
+
+                            <p class="detail-text">
+
+                                Directive establishing revised
+                                security classifications and
+                                authorization requirements for
+                                sensitive BID personnel and
+                                operational records.
+
+                            </p>
+
+                        </div>
+
+
+                        <div class="restricted-access">
+
+                            <div class="restricted-icon">
+                                //
+                            </div>
+
+                            <div class="restricted-text">
+
+                                <div class="restricted-title">
+                                    RESTRICTED DOCUMENT
+                                </div>
+
+                                <div class="restricted-subtitle">
+                                    ADDITIONAL INFORMATION REQUIRES
+                                    AUTHORIZED CLEARANCE
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    BID // ARCHIVAL DATABASE // EST. 1976
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+    /* =========================
+       SWITCH ARCHIVE FILTER
+    ========================= */
+
+    function showTab(tab, button) {
+
+        document.getElementById("history-list").style.display = "none";
+
+        document.getElementById("incidents-list").style.display = "none";
+
+        document.getElementById("documents-list").style.display = "none";
+
+
+        document.getElementById(tab + "-list").style.display = "block";
+
+
+        const tabs = document.querySelectorAll(".tab");
+
+        tabs.forEach(function(item) {
+
+            item.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+
+        const titles = {
+
+            history: "HISTORY // CHRONOLOGY",
+
+            incidents: "INCIDENTS // RECORDS",
+
+            documents: "DOCUMENTS // ARCHIVE"
+
+        };
+
+
+        document.getElementById("directory-header").textContent =
+            titles[tab];
+
+
+        document.querySelectorAll(".detail-content").forEach(function(item) {
+
+            item.classList.remove("visible");
+
+        });
+
+
+        document.getElementById("detail-placeholder").style.display =
+            "flex";
+
+
+        document.querySelectorAll(".archive-entry").forEach(function(item) {
+
+            item.classList.remove("selected");
+
+        });
+
+    }
+
+
+
+    /* =========================
+       SHOW ARCHIVE ENTRY
+    ========================= */
+
+    function showDetail(id, entry) {
+
+        document.querySelectorAll(".archive-entry").forEach(function(item) {
+
+            item.classList.remove("selected");
+
+        });
+
+
+        entry.classList.add("selected");
+
+
+        document.querySelectorAll(".detail-content").forEach(function(item) {
+
+            item.classList.remove("visible");
+
+        });
+
+
+        document.getElementById(id).classList.add("visible");
+
+
+        document.getElementById("detail-placeholder").style.display =
+            "none";
+
+    }
+
+</script>
+
+
+</body>
+</html>
