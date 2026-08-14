@@ -14,13 +14,14 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
-
             background: #080a0c;
-
             color: #ffffff;
-
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -31,24 +32,18 @@
 
         header {
             width: 100%;
-
             padding: 32px 50px;
 
             display: flex;
-
             align-items: flex-start;
-
             justify-content: space-between;
 
             border-bottom: 1px solid #1d2125;
         }
 
-
         .brand {
             text-decoration: none;
-
             color: white;
-
             line-height: 1;
         }
 
@@ -58,7 +53,6 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 30px;
-
             font-weight: 700;
 
             letter-spacing: 7px;
@@ -70,7 +64,6 @@
             margin-top: 8px;
 
             font-size: 9px;
-
             letter-spacing: 2px;
 
             color: #777d81;
@@ -83,11 +76,8 @@
 
         nav {
             display: flex;
-
             align-items: center;
-
             gap: 34px;
-
             padding-top: 4px;
         }
 
@@ -101,7 +91,6 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 9px;
-
             letter-spacing: 2px;
 
             transition: color 0.2s ease;
@@ -118,11 +107,9 @@
             position: absolute;
 
             left: 0;
-
             bottom: -8px;
 
             width: 0;
-
             height: 1px;
 
             background: #b91c1c;
@@ -163,7 +150,6 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 10px;
-
             letter-spacing: 4px;
 
             margin-bottom: 25px;
@@ -183,7 +169,6 @@
 
         .red-line {
             width: 75px;
-
             height: 2px;
 
             background: #b91c1c;
@@ -201,16 +186,15 @@
 
             grid-template-columns: 390px 1fr;
 
-            min-height: 650px;
+            min-height: 680px;
 
             border-top: 1px solid #252a2e;
-
             border-bottom: 1px solid #252a2e;
         }
 
 
         /* =========================
-           LEFT PANEL
+           LEFT DIRECTORY
         ========================= */
 
         .directory {
@@ -220,7 +204,9 @@
         }
 
 
-        /* TABS */
+        /* =========================
+           TABS
+        ========================= */
 
         .tabs {
             display: grid;
@@ -234,7 +220,6 @@
             padding: 20px 10px;
 
             border: none;
-
             border-right: 1px solid #252a2e;
 
             background: transparent;
@@ -244,7 +229,6 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 8px;
-
             letter-spacing: 1px;
 
             cursor: pointer;
@@ -269,7 +253,9 @@
         }
 
 
-        /* DIRECTORY HEADER */
+        /* =========================
+           DIRECTORY HEADER
+        ========================= */
 
         .directory-header {
             padding: 20px;
@@ -281,12 +267,13 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 8px;
-
             letter-spacing: 2px;
         }
 
 
-        /* CARD LIST */
+        /* =========================
+           CARD LIST
+        ========================= */
 
         .card-list {
             padding: 10px;
@@ -294,7 +281,7 @@
 
 
         /* =========================
-           DATABASE CARD
+           DATABASE CARDS
         ========================= */
 
         .database-card {
@@ -340,22 +327,30 @@
         }
 
 
-        /* PROFILE IMAGE */
+        /* =========================
+           CARD IMAGE
+        ========================= */
 
         .card-image {
             width: 65px;
-
             height: 65px;
 
             flex-shrink: 0;
 
+            display: block;
+
             object-fit: cover;
+            object-position: center;
 
             background: #171b1e;
 
             border: 1px solid #30363a;
         }
 
+
+        /* =========================
+           CARD TEXT
+        ========================= */
 
         .card-info {
             min-width: 0;
@@ -394,7 +389,9 @@
         }
 
 
-        /* STATUS */
+        /* =========================
+           CARD STATUS
+        ========================= */
 
         .card-status {
             align-self: flex-start;
@@ -421,8 +418,14 @@
             background: #0b0e10;
 
             padding: 45px 55px;
+
+            overflow: hidden;
         }
 
+
+        /* =========================
+           PLACEHOLDER
+        ========================= */
 
         .detail-placeholder {
             height: 100%;
@@ -430,7 +433,6 @@
             display: flex;
 
             align-items: center;
-
             justify-content: center;
 
             color: #41474b;
@@ -445,7 +447,9 @@
         }
 
 
-        /* DETAIL CONTENT */
+        /* =========================
+           DETAIL CONTENT
+        ========================= */
 
         .detail-content {
             display: none;
@@ -456,11 +460,14 @@
         }
 
 
+        /* =========================
+           DETAIL TOP
+        ========================= */
+
         .detail-top {
             display: flex;
 
             justify-content: space-between;
-
             align-items: flex-start;
 
             gap: 30px;
@@ -469,7 +476,6 @@
 
             border-bottom: 1px solid #252a2e;
         }
-
 
         .detail-category {
             color: #b91c1c;
@@ -483,7 +489,6 @@
             margin-bottom: 15px;
         }
 
-
         .detail-name {
             margin: 0;
 
@@ -493,7 +498,6 @@
 
             letter-spacing: 3px;
         }
-
 
         .detail-role {
             margin-top: 10px;
@@ -507,6 +511,10 @@
             letter-spacing: 2px;
         }
 
+
+        /* =========================
+           STATUS
+        ========================= */
 
         .detail-status {
             padding: 10px 15px;
@@ -525,19 +533,20 @@
         }
 
 
-        /* DETAIL BODY */
+        /* =========================
+           DETAIL BODY
+        ========================= */
 
         .detail-body {
             padding-top: 35px;
 
-            max-width: 900px;
+            max-width: 950px;
         }
 
 
         .detail-section {
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
-
 
         .detail-label {
             margin-bottom: 10px;
@@ -551,7 +560,6 @@
             letter-spacing: 3px;
         }
 
-
         .detail-text {
             margin: 0;
 
@@ -563,22 +571,35 @@
         }
 
 
-        /* DETAIL IMAGE */
+        /* =========================
+           DETAIL IMAGE
+        ========================= */
 
         .detail-image {
             float: right;
 
-            width: 180px;
-
-            height: 220px;
+            width: 200px;
+            height: 245px;
 
             object-fit: cover;
+            object-position: center;
 
-            margin: 0 0 30px 35px;
+            margin: 0 0 30px 40px;
 
             border: 1px solid #252a2e;
 
             background: #101316;
+        }
+
+
+        /* =========================
+           REDACTED TEXT
+        ========================= */
+
+        .redacted {
+            color: #555b60;
+
+            letter-spacing: 2px;
         }
 
 
@@ -628,6 +649,7 @@
             .details {
                 padding: 35px;
             }
+
         }
 
 
@@ -662,15 +684,14 @@
             }
 
             .details {
-                min-height: 550px;
+                min-height: 600px;
             }
 
             .detail-image {
                 float: none;
 
-                width: 130px;
-
-                height: 160px;
+                width: 140px;
+                height: 175px;
 
                 margin: 0 0 25px 0;
             }
@@ -682,6 +703,7 @@
             footer {
                 padding: 20px;
             }
+
         }
 
     </style>
@@ -712,17 +734,29 @@
 
     <nav>
 
-        <a href="index.html">HOME</a>
+        <a href="index.html">
+            HOME
+        </a>
 
-        <a href="about.html">ABOUT</a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-        <a href="divisions.html">DIVISIONS</a>
+        <a href="divisions.html">
+            DIVISIONS
+        </a>
 
-        <a href="database.html" class="active">DATABASE</a>
+        <a href="database.html" class="active">
+            DATABASE
+        </a>
 
-        <a href="locations.html">LOCATIONS</a>
+        <a href="locations.html">
+            LOCATIONS
+        </a>
 
-        <a href="archive.html">ARCHIVE</a>
+        <a href="archive.html">
+            ARCHIVE
+        </a>
 
     </nav>
 
@@ -736,6 +770,8 @@
 
 <main>
 
+
+    <!-- PAGE TITLE -->
 
     <section class="page-header">
 
@@ -754,18 +790,20 @@
 
 
     <!-- =========================
-         DATABASE
+         DATABASE INTERFACE
     ========================= -->
 
     <section class="database-interface">
 
 
         <!-- =====================
-             LEFT DIRECTORY
+             LEFT SIDE
         ====================== -->
 
         <div class="directory">
 
+
+            <!-- TABS -->
 
             <div class="tabs">
 
@@ -793,15 +831,28 @@
             </div>
 
 
-            <div class="directory-header" id="directory-header">
-                PERSONNEL // 001 RECORDS
+            <!-- DIRECTORY TITLE -->
+
+            <div
+                class="directory-header"
+                id="directory-header"
+            >
+                PERSONNEL // RECORDS
             </div>
 
 
-            <!-- PERSONNEL -->
 
-            <div class="card-list" id="personnel-list">
+            <!-- =====================
+                 PERSONNEL
+            ====================== -->
 
+            <div
+                class="card-list"
+                id="personnel-list"
+            >
+
+
+                <!-- VESPER -->
 
                 <button
                     class="database-card selected"
@@ -810,7 +861,7 @@
 
                     <img
                         class="card-image"
-                        src="Vesper.jpg"
+                        src="./Vesper.jpg"
                         alt="Vesper"
                     >
 
@@ -837,7 +888,8 @@
                 </button>
 
 
-                <!-- ADD MORE PERSONNEL HERE -->
+
+                <!-- SECOND PERSONNEL -->
 
                 <button
                     class="database-card"
@@ -846,7 +898,7 @@
 
                     <img
                         class="card-image"
-                        src="placeholder.jpg"
+                        src="./Vesper.jpg"
                         alt="Personnel"
                     >
 
@@ -876,7 +928,10 @@
             </div>
 
 
-            <!-- RECORDS -->
+
+            <!-- =====================
+                 RECORDS
+            ====================== -->
 
             <div
                 class="card-list"
@@ -889,8 +944,17 @@
                     onclick="showDetail('record-one', this)"
                 >
 
-                    <div class="card-image"
-                         style="display:flex;align-items:center;justify-content:center;color:#b91c1c;font-family:Orbitron;font-size:20px;">
+                    <div
+                        class="card-image"
+                        style="
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            color:#b91c1c;
+                            font-family:Orbitron;
+                            font-size:20px;
+                        "
+                    >
                         //
                     </div>
 
@@ -917,10 +981,54 @@
                 </button>
 
 
+                <button
+                    class="database-card"
+                    onclick="showDetail('record-two', this)"
+                >
+
+                    <div
+                        class="card-image"
+                        style="
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            color:#b91c1c;
+                            font-family:Orbitron;
+                            font-size:20px;
+                        "
+                    >
+                        //
+                    </div>
+
+                    <div class="card-info">
+
+                        <div class="card-id">
+                            RECORD // 002
+                        </div>
+
+                        <div class="card-name">
+                            OPERATION [REDACTED]
+                        </div>
+
+                        <div class="card-role">
+                            FIELD REPORT
+                        </div>
+
+                    </div>
+
+                    <div class="card-status">
+                        SEALED
+                    </div>
+
+                </button>
+
             </div>
 
 
-            <!-- EQUIPMENT -->
+
+            <!-- =====================
+                 EQUIPMENT
+            ====================== -->
 
             <div
                 class="card-list"
@@ -933,8 +1041,17 @@
                     onclick="showDetail('equipment-one', this)"
                 >
 
-                    <div class="card-image"
-                         style="display:flex;align-items:center;justify-content:center;color:#b91c1c;font-family:Orbitron;font-size:20px;">
+                    <div
+                        class="card-image"
+                        style="
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            color:#b91c1c;
+                            font-family:Orbitron;
+                            font-size:20px;
+                        "
+                    >
                         //
                     </div>
 
@@ -961,6 +1078,47 @@
                 </button>
 
 
+                <button
+                    class="database-card"
+                    onclick="showDetail('equipment-two', this)"
+                >
+
+                    <div
+                        class="card-image"
+                        style="
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            color:#b91c1c;
+                            font-family:Orbitron;
+                            font-size:20px;
+                        "
+                    >
+                        //
+                    </div>
+
+                    <div class="card-info">
+
+                        <div class="card-id">
+                            EQUIPMENT // 002
+                        </div>
+
+                        <div class="card-name">
+                            FIELD COMMS UNIT
+                        </div>
+
+                        <div class="card-role">
+                            COMMUNICATIONS
+                        </div>
+
+                    </div>
+
+                    <div class="card-status">
+                        ACTIVE
+                    </div>
+
+                </button>
+
             </div>
 
 
@@ -968,30 +1126,36 @@
 
 
 
-        <!-- =====================
-             RIGHT DETAILS
-        ====================== -->
+        <!-- =========================
+             RIGHT SIDE
+        ========================== -->
 
         <div class="details">
 
 
-            <!-- DEFAULT -->
+            <!-- DEFAULT MESSAGE -->
 
             <div
                 class="detail-placeholder"
                 id="detail-placeholder"
+                style="display: none;"
             >
                 SELECT A RECORD TO VIEW
             </div>
 
 
 
-            <!-- VESPER -->
+            <!-- ==================================================
+                 VESPER
+            =================================================== -->
 
             <div
                 class="detail-content visible"
                 id="vesper"
             >
+
+
+                <!-- TOP -->
 
                 <div class="detail-top">
 
@@ -1006,7 +1170,7 @@
                         </h2>
 
                         <div class="detail-role">
-                            OPERATIVE
+                            FIELD OPERATIVE // SPECIAL OPERATIONS
                         </div>
 
                     </div>
@@ -1019,14 +1183,45 @@
                 </div>
 
 
+
+                <!-- BODY -->
+
                 <div class="detail-body">
+
+
+                    <!-- PHOTO -->
 
                     <img
                         class="detail-image"
-                        src="vesper.jpg"
+                        src="./Vesper.jpg"
                         alt="Vesper"
                     >
 
+
+
+                    <!-- IDENTIFICATION -->
+
+                    <div class="detail-section">
+
+                        <div class="detail-label">
+                            IDENTIFICATION
+                        </div>
+
+                        <p class="detail-text">
+
+                            DESIGNATION: V-07<br>
+                            CODENAME: VESPER<br>
+                            POSITION: FIELD OPERATIVE<br>
+                            DIVISION: FIELD OPERATIONS<br>
+                            STATUS: ACTIVE
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- PERSONNEL SUMMARY -->
 
                     <div class="detail-section">
 
@@ -1036,60 +1231,146 @@
 
                         <p class="detail-text">
 
-                            [INSERT VESPER'S SHORT OFFICIAL
-                            BID DESCRIPTION HERE.]
+                            V-07 is a field operative assigned to
+                            high-risk and specialized operations
+                            under the Bureau of International Defense.
+
+                            <br><br>
+
+                            Her operational record indicates
+                            extensive experience in infiltration,
+                            intelligence acquisition, surveillance,
+                            and situations requiring independent
+                            field judgment.
 
                         </p>
 
                     </div>
 
+
+
+                    <!-- OPERATIONAL PROFILE -->
 
                     <div class="detail-section">
 
                         <div class="detail-label">
-                            ROLE
+                            OPERATIONAL PROFILE
                         </div>
 
                         <p class="detail-text">
 
-                            Operative assigned to field operations
-                            and specialized missions under BID
-                            jurisdiction.
+                            Vesper is considered highly adaptable
+                            in unstable environments and demonstrates
+                            a consistent ability to operate with
+                            limited support.
+
+                            <br><br>
+
+                            Recommended for assignments where
+                            conventional operational structures
+                            are considered insufficient.
 
                         </p>
 
                     </div>
 
+
+
+                    <!-- PSYCHOLOGICAL -->
 
                     <div class="detail-section">
 
                         <div class="detail-label">
-                            CLEARANCE
+                            PSYCHOLOGICAL EVALUATION
                         </div>
 
                         <p class="detail-text">
 
-                            [INSERT CLEARANCE LEVEL]
+                            Psychological evaluation remains
+                            restricted to authorized medical and
+                            command personnel.
+
+                            <br><br>
+
+                            Previous assessments have recommended
+                            continued monitoring following extended
+                            field deployment.
 
                         </p>
 
                     </div>
 
+
+
+                    <!-- CLEARANCE -->
 
                     <div class="detail-section">
 
                         <div class="detail-label">
-                            ADDITIONAL NOTES
+                            SECURITY CLEARANCE
                         </div>
 
                         <p class="detail-text">
 
-                            Further personnel information is
-                            restricted to authorized personnel.
+                            CLEARANCE: LEVEL ███<br>
+                            ACCESS: OPERATIONAL / RESTRICTED<br>
+                            COMMAND AUTHORIZATION: REQUIRED
 
                         </p>
 
                     </div>
+
+
+
+                    <!-- INTERNAL NOTES -->
+
+                    <div class="detail-section">
+
+                        <div class="detail-label">
+                            INTERNAL NOTES
+                        </div>
+
+                        <p class="detail-text">
+
+                            V-07 is not to be reassigned without
+                            direct authorization from Division
+                            Command.
+
+                            <br><br>
+
+                            Personnel are reminded that operational
+                            familiarity does not constitute
+                            unrestricted access to V-07's record.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- RESTRICTED -->
+
+                    <div class="detail-section">
+
+                        <div class="detail-label">
+                            ADDITIONAL INFORMATION
+                        </div>
+
+                        <p class="detail-text redacted">
+
+                            ████████████████████████████████████<br>
+                            ████████████████████████████████████<br>
+                            ████████████████████████████████████
+
+                            <br><br>
+
+                            THIS INFORMATION HAS BEEN RESTRICTED
+                            BY INTERNAL SECURITY.
+
+                        </p>
+
+                    </div>
+
 
                 </div>
 
@@ -1097,7 +1378,9 @@
 
 
 
-            <!-- PERSON TWO -->
+            <!-- ==================================================
+                 PERSON TWO
+            =================================================== -->
 
             <div
                 class="detail-content"
@@ -1128,6 +1411,7 @@
 
                 </div>
 
+
                 <div class="detail-body">
 
                     <div class="detail-section">
@@ -1148,7 +1432,9 @@
 
 
 
-            <!-- RECORD -->
+            <!-- ==================================================
+                 RECORD ONE
+            =================================================== -->
 
             <div
                 class="detail-content"
@@ -1179,6 +1465,7 @@
 
                 </div>
 
+
                 <div class="detail-body">
 
                     <div class="detail-section">
@@ -1188,8 +1475,10 @@
                         </div>
 
                         <p class="detail-text">
+
                             This record has been sealed by
                             BID Internal Security.
+
                         </p>
 
                     </div>
@@ -1200,7 +1489,66 @@
 
 
 
-            <!-- EQUIPMENT -->
+            <!-- ==================================================
+                 RECORD TWO
+            =================================================== -->
+
+            <div
+                class="detail-content"
+                id="record-two"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            RECORD // 002
+                        </div>
+
+                        <h2 class="detail-name">
+                            OPERATION [REDACTED]
+                        </h2>
+
+                        <div class="detail-role">
+                            FIELD REPORT
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        SEALED
+                    </div>
+
+                </div>
+
+
+                <div class="detail-body">
+
+                    <div class="detail-section">
+
+                        <div class="detail-label">
+                            RECORD STATUS
+                        </div>
+
+                        <p class="detail-text">
+
+                            Access to this operation has been
+                            restricted by Division Command.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 EQUIPMENT ONE
+            =================================================== -->
 
             <div
                 class="detail-content"
@@ -1226,10 +1574,11 @@
                     </div>
 
                     <div class="detail-status">
-                        ACTIVE
+                        ● ACTIVE
                     </div>
 
                 </div>
+
 
                 <div class="detail-body">
 
@@ -1240,7 +1589,67 @@
                         </div>
 
                         <p class="detail-text">
+
                             Equipment information restricted.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 EQUIPMENT TWO
+            =================================================== -->
+
+            <div
+                class="detail-content"
+                id="equipment-two"
+            >
+
+                <div class="detail-top">
+
+                    <div>
+
+                        <div class="detail-category">
+                            EQUIPMENT // 002
+                        </div>
+
+                        <h2 class="detail-name">
+                            FIELD COMMS UNIT
+                        </h2>
+
+                        <div class="detail-role">
+                            COMMUNICATIONS
+                        </div>
+
+                    </div>
+
+                    <div class="detail-status">
+                        ● ACTIVE
+                    </div>
+
+                </div>
+
+
+                <div class="detail-body">
+
+                    <div class="detail-section">
+
+                        <div class="detail-label">
+                            EQUIPMENT SUMMARY
+                        </div>
+
+                        <p class="detail-text">
+
+                            Secure communications equipment
+                            issued to authorized BID field
+                            personnel.
+
                         </p>
 
                     </div>
@@ -1258,6 +1667,10 @@
 
 
 
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
     BID // INTERNAL DATABASE // EST. 1976
@@ -1272,11 +1685,15 @@
 
 <script>
 
+
+    /* ==================================================
+       SWITCH DATABASE TABS
+    ================================================== */
+
     function showTab(tab, button) {
 
-        /*
-         * Hide every list
-         */
+
+        /* Hide every card list */
 
         document.getElementById("personnel-list").style.display = "none";
 
@@ -1285,16 +1702,12 @@
         document.getElementById("equipment-list").style.display = "none";
 
 
-        /*
-         * Show selected list
-         */
+        /* Show selected list */
 
         document.getElementById(tab + "-list").style.display = "block";
 
 
-        /*
-         * Update active tab
-         */
+        /* Update active tab */
 
         const tabs = document.querySelectorAll(".tab");
 
@@ -1307,9 +1720,7 @@
         button.classList.add("active");
 
 
-        /*
-         * Update directory title
-         */
+        /* Update directory title */
 
         const titles = {
 
@@ -1325,10 +1736,7 @@
             titles[tab];
 
 
-        /*
-         * Hide current detail
-
-         */
+        /* Hide all detail pages */
 
         document.querySelectorAll(".detail-content").forEach(function(item) {
 
@@ -1336,18 +1744,33 @@
 
         });
 
+
+        /* Show placeholder */
+
         document.getElementById("detail-placeholder").style.display =
             "flex";
+
+
+        /* Remove selected card from every tab */
+
+        document.querySelectorAll(".database-card").forEach(function(item) {
+
+            item.classList.remove("selected");
+
+        });
 
     }
 
 
 
+    /* ==================================================
+       SHOW DATABASE ENTRY
+    ================================================== */
+
     function showDetail(id, card) {
 
-        /*
-         * Remove selected state from cards
-         */
+
+        /* Remove selected state */
 
         document.querySelectorAll(".database-card").forEach(function(item) {
 
@@ -1356,16 +1779,12 @@
         });
 
 
-        /*
-         * Select clicked card
-         */
+        /* Select clicked card */
 
         card.classList.add("selected");
 
 
-        /*
-         * Hide all details
-         */
+        /* Hide every detail */
 
         document.querySelectorAll(".detail-content").forEach(function(item) {
 
@@ -1374,21 +1793,18 @@
         });
 
 
-        /*
-         * Show selected detail
-         */
+        /* Show selected detail */
 
         document.getElementById(id).classList.add("visible");
 
 
-        /*
-         * Hide placeholder
-         */
+        /* Hide placeholder */
 
         document.getElementById("detail-placeholder").style.display =
             "none";
 
     }
+
 
 </script>
 
