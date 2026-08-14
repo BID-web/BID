@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ABOUT // BID</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background: #080a0c;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+
+            padding: 32px 50px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #1d2125;
+        }
+
+
+        .brand {
+            text-decoration: none;
+            color: white;
+
+            line-height: 1;
+        }
+
+        .brand-main {
+            display: block;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 30px;
+            font-weight: 700;
+
+            letter-spacing: 7px;
+        }
+
+        .brand-sub {
+            display: block;
+
+            margin-top: 8px;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            color: #777d81;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            display: flex;
+
+            align-items: center;
+
+            gap: 34px;
+
+            padding-top: 4px;
+        }
+
+        nav a {
+            position: relative;
+
+            color: #777d81;
+
+            text-decoration: none;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 1px;
+
+            background: #b91c1c;
+
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: white;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1300px;
+
+            margin: auto;
+
+            padding: 90px 50px 120px;
+        }
+
+
+        /* =========================
+           INTRODUCTION
+        ========================= */
+
+        .intro {
+            min-height: 430px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+
+        .about-text {
+            max-width: 600px;
+        }
+
+
+        .eyebrow {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .about-text h1 {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(40px, 5vw, 72px);
+
+            letter-spacing: 3px;
+
+            line-height: 1;
+        }
+
+
+        .about-text p {
+            margin-top: 30px;
+
+            max-width: 550px;
+
+            color: #92979b;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        .read-more {
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 14px 24px;
+
+            border: 1px solid #383e43;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            transition: 0.2s ease;
+        }
+
+        .read-more:hover {
+            background: #b91c1c;
+
+            border-color: #b91c1c;
+        }
+
+
+        /* =========================
+           LOGO / QUOTE
+        ========================= */
+
+        .identity {
+            text-align: center;
+
+            padding: 30px;
+        }
+
+
+        .bid-symbol {
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(70px, 10vw, 140px);
+
+            font-weight: 700;
+
+            letter-spacing: 15px;
+
+            color: #e1e3e5;
+        }
+
+
+        .identity-line {
+            width: 50px;
+
+            height: 1px;
+
+            background: #b91c1c;
+
+            margin: 25px auto;
+        }
+
+
+        .identity p {
+            margin: 0;
+
+            color: #777d81;
+
+            font-size: 12px;
+
+            font-style: italic;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================
+           LOCATIONS
+        ========================= */
+
+        .locations {
+            margin-top: 100px;
+
+            border-top: 1px solid #1d2125;
+
+            padding-top: 40px;
+        }
+
+
+        .locations-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            margin-bottom: 30px;
+        }
+
+
+        .locations-header h2 {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 20px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .locations-header span {
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .location-grid {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 12px;
+        }
+
+
+        .location {
+            position: relative;
+
+            height: 230px;
+
+            overflow: hidden;
+
+            border: 1px solid #252a2e;
+
+            text-decoration: none;
+
+            background: #101316;
+        }
+
+
+        .location img {
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            opacity: 0.55;
+
+            transition:
+                transform 0.4s ease,
+                opacity 0.4s ease;
+        }
+
+
+        .location:hover img {
+            transform: scale(1.05);
+
+            opacity: 0.75;
+        }
+
+
+        .location-info {
+            position: absolute;
+
+            left: 20px;
+            bottom: 18px;
+
+            right: 20px;
+        }
+
+
+        .location-number {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .location-name {
+            margin-top: 7px;
+
+            color: white;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 15px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .location-hint {
+            margin-top: 5px;
+
+            color: #92979b;
+
+            font-size: 9px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #1d2125;
+
+            padding: 20px 50px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 25px;
+            }
+
+            nav {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: flex-end;
+            }
+
+            main {
+                padding: 60px 25px 80px;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+
+                gap: 50px;
+            }
+
+            .identity {
+                order: -1;
+            }
+
+            .location-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            footer {
+                padding: 20px 25px;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 25px;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-main">
+            BID
+        </span>
+
+        <span class="brand-sub">
+            BUREAU OF INTERNATIONAL DEFENSE
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">HOME</a>
+
+        <a href="about.html" class="active">ABOUT</a>
+
+        <a href="divisions.html">DIVISIONS</a>
+
+        <a href="database.html">DATABASE</a>
+
+        <a href="locations.html">LOCATIONS</a>
+
+        <a href="archive.html">ARCHIVE</a>
+
+    </nav>
+
+</header>
+
+
+
+<main>
+
+
+    <!-- =========================
+         ABOUT INTRO
+    ========================= -->
+
+    <section class="intro">
+
+
+        <div class="about-text">
+
+            <div class="eyebrow">
+                ABOUT // 001
+            </div>
+
+            <h1>
+                ABOUT BID
+            </h1>
+
+            <p>
+                Established in 1976. The Bureau Of International
+                Defense operates in secrecy to ensure the safety
+                and stability of the world.
+            </p>
+
+            <a href="history.html" class="read-more">
+                READ MORE&nbsp;&nbsp; →
+            </a>
+
+        </div>
+
+
+
+        <div class="identity">
+
+            <div class="bid-symbol">
+                BID
+            </div>
+
+            <div class="identity-line"></div>
+
+            <p>
+                "The world isn't always what it seems."
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================
+         LOCATIONS
+    ========================= -->
+
+    <section class="locations">
+
+        <div class="locations-header">
+
+            <h2>
+                FACILITY LOCATIONS
+            </h2>
+
+            <span>
+                SELECT A LOCATION TO VIEW RECORD
+            </span>
+
+        </div>
+
+
+
+        <div class="location-grid">
+
+
+            <a href="citadel.html" class="location">
+
+                <img src="citadel.jpg" alt="The Citadel">
+
+                <div class="location-info">
+
+                    <div class="location-number">
+                        LOCATION // 001
+                    </div>
+
+                    <div class="location-name">
+                        THE CITADEL
+                    </div>
+
+                    <div class="location-hint">
+                        PRIMARY LIVING QUARTERS
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="location-002.html" class="location">
+
+                <img src="location-002.jpg" alt="BID Facility">
+
+                <div class="location-info">
+
+                    <div class="location-number">
+                        LOCATION // 002
+                    </div>
+
+                    <div class="location-name">
+                        [REDACTED]
+                    </div>
+
+                    <div class="location-hint">
+                        CLASSIFIED
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="location-003.html" class="location">
+
+                <img src="location-003.jpg" alt="BID Facility">
+
+                <div class="location-info">
+
+                    <div class="location-number">
+                        LOCATION // 003
+                    </div>
+
+                    <div class="location-name">
+                        [REDACTED]
+                    </div>
+
+                    <div class="location-hint">
+                        CLASSIFIED
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="location-004.html" class="location">
+
+                <img src="location-004.jpg" alt="BID Facility">
+
+                <div class="location-info">
+
+                    <div class="location-number">
+                        LOCATION // 004
+                    </div>
+
+                    <div class="location-name">
+                        [REDACTED]
+                    </div>
+
+                    <div class="location-hint">
+                        CLASSIFIED
+                    </div>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<footer>
+
+    BID // INTERNAL DATABASE // EST. 1976
+
+</footer>
+
+
+</body>
+</html>
