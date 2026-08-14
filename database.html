@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,78 +12,103 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
 
+
         * {
             box-sizing: border-box;
         }
+
 
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
             margin: 0;
+
             background: #080a0c;
             color: #ffffff;
+
             font-family: 'Montserrat', sans-serif;
         }
 
 
-        /* =========================
+        /* ==================================================
            HEADER
-        ========================= */
+        ================================================== */
 
         header {
+
             width: 100%;
+
             padding: 32px 50px;
 
             display: flex;
+
             align-items: flex-start;
+
             justify-content: space-between;
 
             border-bottom: 1px solid #1d2125;
         }
 
+
         .brand {
-            text-decoration: none;
+
             color: white;
+
+            text-decoration: none;
+
             line-height: 1;
         }
 
+
         .brand-main {
+
             display: block;
 
             font-family: 'Orbitron', sans-serif;
 
             font-size: 30px;
+
             font-weight: 700;
 
             letter-spacing: 7px;
         }
 
+
         .brand-sub {
+
             display: block;
 
             margin-top: 8px;
 
-            font-size: 9px;
-            letter-spacing: 2px;
-
             color: #777d81;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
         }
 
 
-        /* =========================
+        /* ==================================================
            NAVIGATION
-        ========================= */
+        ================================================== */
 
         nav {
+
             display: flex;
+
             align-items: center;
+
             gap: 34px;
+
             padding-top: 4px;
         }
 
+
         nav a {
+
             position: relative;
 
             color: #777d81;
@@ -91,25 +118,32 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 9px;
+
             letter-spacing: 2px;
 
             transition: color 0.2s ease;
         }
 
+
         nav a:hover,
         nav a.active {
+
             color: white;
         }
 
+
         nav a::after {
+
             content: "";
 
             position: absolute;
 
             left: 0;
+
             bottom: -8px;
 
             width: 0;
+
             height: 1px;
 
             background: #b91c1c;
@@ -117,17 +151,20 @@
             transition: width 0.2s ease;
         }
 
+
         nav a:hover::after,
         nav a.active::after {
+
             width: 100%;
         }
 
 
-        /* =========================
+        /* ==================================================
            MAIN
-        ========================= */
+        ================================================== */
 
         main {
+
             max-width: 1500px;
 
             margin: auto;
@@ -136,26 +173,32 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            PAGE HEADER
-        ========================= */
+        ================================================== */
 
         .page-header {
+
             margin-bottom: 55px;
         }
 
+
         .eyebrow {
+
+            margin-bottom: 25px;
+
             color: #b91c1c;
 
             font-family: 'Orbitron', sans-serif;
 
             font-size: 10px;
-            letter-spacing: 4px;
 
-            margin-bottom: 25px;
+            letter-spacing: 4px;
         }
 
+
         h1 {
+
             margin: 0;
 
             font-family: 'Orbitron', sans-serif;
@@ -167,21 +210,25 @@
             line-height: 0.95;
         }
 
+
         .red-line {
+
             width: 75px;
+
             height: 2px;
 
-            background: #b91c1c;
-
             margin-top: 35px;
+
+            background: #b91c1c;
         }
 
 
-        /* =========================
+        /* ==================================================
            DATABASE INTERFACE
-        ========================= */
+        ================================================== */
 
         .database-interface {
+
             display: grid;
 
             grid-template-columns: 390px 1fr;
@@ -189,26 +236,29 @@
             min-height: 680px;
 
             border-top: 1px solid #252a2e;
+
             border-bottom: 1px solid #252a2e;
         }
 
 
-        /* =========================
+        /* ==================================================
            LEFT DIRECTORY
-        ========================= */
+        ================================================== */
 
         .directory {
-            border-right: 1px solid #252a2e;
 
             background: #0a0d0f;
+
+            border-right: 1px solid #252a2e;
         }
 
 
-        /* =========================
+        /* ==================================================
            TABS
-        ========================= */
+        ================================================== */
 
         .tabs {
+
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
@@ -216,10 +266,13 @@
             border-bottom: 1px solid #252a2e;
         }
 
+
         .tab {
+
             padding: 20px 10px;
 
             border: none;
+
             border-right: 1px solid #252a2e;
 
             background: transparent;
@@ -229,6 +282,7 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 8px;
+
             letter-spacing: 1px;
 
             cursor: pointer;
@@ -236,15 +290,21 @@
             transition: 0.2s ease;
         }
 
+
         .tab:last-child {
+
             border-right: none;
         }
 
+
         .tab:hover {
+
             color: white;
         }
 
+
         .tab.active {
+
             color: white;
 
             background: #101417;
@@ -253,11 +313,12 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            DIRECTORY HEADER
-        ========================= */
+        ================================================== */
 
         .directory-header {
+
             padding: 20px;
 
             border-bottom: 1px solid #1d2125;
@@ -267,24 +328,27 @@
             font-family: 'Orbitron', sans-serif;
 
             font-size: 8px;
+
             letter-spacing: 2px;
         }
 
 
-        /* =========================
+        /* ==================================================
            CARD LIST
-        ========================= */
+        ================================================== */
 
         .card-list {
+
             padding: 10px;
         }
 
 
-        /* =========================
+        /* ==================================================
            DATABASE CARDS
-        ========================= */
+        ================================================== */
 
         .database-card {
+
             width: 100%;
 
             min-height: 100px;
@@ -314,25 +378,31 @@
                 background 0.2s ease;
         }
 
+
         .database-card:hover {
+
             border-color: #444b50;
 
             background: #111518;
         }
 
+
         .database-card.selected {
+
             border-color: #b91c1c;
 
             background: #111518;
         }
 
 
-        /* =========================
+        /* ==================================================
            CARD IMAGE
-        ========================= */
+        ================================================== */
 
         .card-image {
+
             width: 65px;
+
             height: 65px;
 
             flex-shrink: 0;
@@ -340,6 +410,7 @@
             display: block;
 
             object-fit: cover;
+
             object-position: center;
 
             background: #171b1e;
@@ -348,17 +419,20 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            CARD TEXT
-        ========================= */
+        ================================================== */
 
         .card-info {
+
             min-width: 0;
 
             flex: 1;
         }
 
+
         .card-id {
+
             color: #b91c1c;
 
             font-family: 'Orbitron', sans-serif;
@@ -368,7 +442,9 @@
             letter-spacing: 2px;
         }
 
+
         .card-name {
+
             margin-top: 6px;
 
             font-family: 'Orbitron', sans-serif;
@@ -378,7 +454,9 @@
             letter-spacing: 1px;
         }
 
+
         .card-role {
+
             margin-top: 5px;
 
             color: #686f74;
@@ -389,11 +467,12 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            CARD STATUS
-        ========================= */
+        ================================================== */
 
         .card-status {
+
             align-self: flex-start;
 
             padding-top: 3px;
@@ -408,11 +487,12 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            RIGHT DETAIL PANEL
-        ========================= */
+        ================================================== */
 
         .details {
+
             position: relative;
 
             background: #0b0e10;
@@ -423,16 +503,18 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            PLACEHOLDER
-        ========================= */
+        ================================================== */
 
         .detail-placeholder {
+
             height: 100%;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
             color: #41474b;
@@ -447,27 +529,32 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            DETAIL CONTENT
-        ========================= */
+        ================================================== */
 
         .detail-content {
+
             display: none;
         }
 
+
         .detail-content.visible {
+
             display: block;
         }
 
 
-        /* =========================
+        /* ==================================================
            DETAIL TOP
-        ========================= */
+        ================================================== */
 
         .detail-top {
+
             display: flex;
 
             justify-content: space-between;
+
             align-items: flex-start;
 
             gap: 30px;
@@ -477,7 +564,11 @@
             border-bottom: 1px solid #252a2e;
         }
 
+
         .detail-category {
+
+            margin-bottom: 15px;
+
             color: #b91c1c;
 
             font-family: 'Orbitron', sans-serif;
@@ -485,11 +576,11 @@
             font-size: 9px;
 
             letter-spacing: 3px;
-
-            margin-bottom: 15px;
         }
 
+
         .detail-name {
+
             margin: 0;
 
             font-family: 'Orbitron', sans-serif;
@@ -499,7 +590,9 @@
             letter-spacing: 3px;
         }
 
+
         .detail-role {
+
             margin-top: 10px;
 
             color: #777d81;
@@ -512,11 +605,12 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            STATUS
-        ========================= */
+        ================================================== */
 
         .detail-status {
+
             padding: 10px 15px;
 
             border: 1px solid #245f3a;
@@ -533,11 +627,272 @@
         }
 
 
-        /* =========================
-           DETAIL BODY
-        ========================= */
+        /* ==================================================
+           VESPER PERSONNEL PROFILE
+        ================================================== */
+
+        .personnel-profile {
+
+            padding-top: 35px;
+
+            display: grid;
+
+            grid-template-columns: 230px 1fr;
+
+            column-gap: 35px;
+
+            row-gap: 30px;
+        }
+
+
+        /* ==================================================
+           VESPER PHOTO
+        ================================================== */
+
+        .personnel-photo {
+
+            width: 230px;
+
+            height: 300px;
+
+            overflow: hidden;
+
+            background: #111518;
+
+            border: 1px solid #30363a;
+        }
+
+
+        .personnel-photo img {
+
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center;
+        }
+
+
+        /* ==================================================
+           PERSONNEL INFORMATION
+        ================================================== */
+
+        .personnel-info {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            align-content: start;
+
+            border-top: 1px solid #252a2e;
+        }
+
+
+        .info-item {
+
+            padding: 17px 15px;
+
+            border-bottom: 1px solid #252a2e;
+
+            border-right: 1px solid #252a2e;
+        }
+
+
+        .info-item:nth-child(even) {
+
+            border-right: none;
+        }
+
+
+        .info-label {
+
+            margin-bottom: 8px;
+
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 7px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .info-value {
+
+            color: #d9dde0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .active-value {
+
+            color: #4ade80;
+        }
+
+
+        .omega {
+
+            color: #b91c1c;
+
+            font-weight: 600;
+        }
+
+
+        /* ==================================================
+           PERSONNEL NOTES
+        ================================================== */
+
+        .personnel-notes {
+
+            grid-column: 1 / -1;
+
+            padding-top: 5px;
+
+            border-top: 1px solid #252a2e;
+        }
+
+
+        .personnel-notes p {
+
+            max-width: 900px;
+
+            margin: 0;
+
+            color: #858b90;
+
+            font-size: 12px;
+
+            line-height: 1.9;
+        }
+
+
+        /* ==================================================
+           RESTRICTED ACCESS
+        ================================================== */
+
+        .restricted-access {
+
+            grid-column: 1 / -1;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            margin-top: 5px;
+
+            padding: 20px;
+
+            border: 1px solid #302022;
+
+            background: #0d0b0c;
+        }
+
+
+        .restricted-icon {
+
+            width: 40px;
+
+            height: 40px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border: 1px solid #552226;
+
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 12px;
+        }
+
+
+        .restricted-text {
+
+            flex: 1;
+        }
+
+
+        .restricted-title {
+
+            color: #d9dde0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .restricted-subtitle {
+
+            margin-top: 7px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+        }
+
+
+        .access-button {
+
+            padding: 12px 18px;
+
+            border: 1px solid #552226;
+
+            background: transparent;
+
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+
+        .access-button:hover {
+
+            background: #b91c1c;
+
+            color: white;
+
+            border-color: #b91c1c;
+        }
+
+
+        /* ==================================================
+           STANDARD DETAIL CONTENT
+        ================================================== */
 
         .detail-body {
+
             padding-top: 35px;
 
             max-width: 950px;
@@ -545,10 +900,13 @@
 
 
         .detail-section {
+
             margin-bottom: 32px;
         }
 
+
         .detail-label {
+
             margin-bottom: 10px;
 
             color: #555b60;
@@ -560,7 +918,9 @@
             letter-spacing: 3px;
         }
 
+
         .detail-text {
+
             margin: 0;
 
             color: #9ca2a6;
@@ -571,46 +931,15 @@
         }
 
 
-        /* =========================
-           DETAIL IMAGE
-        ========================= */
-
-        .detail-image {
-            float: right;
-
-            width: 200px;
-            height: 245px;
-
-            object-fit: cover;
-            object-position: center;
-
-            margin: 0 0 30px 40px;
-
-            border: 1px solid #252a2e;
-
-            background: #101316;
-        }
-
-
-        /* =========================
-           REDACTED TEXT
-        ========================= */
-
-        .redacted {
-            color: #555b60;
-
-            letter-spacing: 2px;
-        }
-
-
-        /* =========================
+        /* ==================================================
            FOOTER
-        ========================= */
+        ================================================== */
 
         footer {
-            border-top: 1px solid #1d2125;
 
             padding: 20px 50px;
+
+            border-top: 1px solid #1d2125;
 
             color: #555b60;
 
@@ -620,17 +949,20 @@
         }
 
 
-        /* =========================
+        /* ==================================================
            TABLET
-        ========================= */
+        ================================================== */
 
         @media (max-width: 1000px) {
 
             header {
+
                 padding: 25px;
             }
 
+
             nav {
+
                 gap: 15px;
 
                 flex-wrap: wrap;
@@ -638,351 +970,146 @@
                 justify-content: flex-end;
             }
 
+
             main {
+
                 padding: 70px 30px 90px;
             }
 
+
             .database-interface {
+
                 grid-template-columns: 320px 1fr;
             }
 
+
             .details {
+
                 padding: 35px;
             }
 
         }
 
 
-        /* =========================
+        /* ==================================================
            MOBILE
-        ========================= */
+        ================================================== */
 
         @media (max-width: 750px) {
 
             header {
+
                 flex-direction: column;
 
                 gap: 25px;
             }
 
+
             nav {
+
                 justify-content: flex-start;
+
+                flex-wrap: wrap;
             }
 
+
             main {
+
                 padding: 60px 20px 80px;
             }
 
+
             .database-interface {
+
                 display: block;
             }
 
+
             .directory {
+
                 border-right: none;
 
                 border-bottom: 1px solid #252a2e;
             }
 
+
             .details {
+
                 min-height: 600px;
+
+                padding: 30px 20px;
             }
 
-            .detail-image {
-                float: none;
-
-                width: 140px;
-                height: 175px;
-
-                margin: 0 0 25px 0;
-            }
 
             .detail-top {
+
                 flex-direction: column;
             }
 
+
+            .personnel-profile {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .personnel-photo {
+
+                width: 180px;
+
+                height: 230px;
+            }
+
+
+            .personnel-info {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .info-item {
+
+                border-right: none;
+            }
+
+
+            .personnel-notes {
+
+                grid-column: 1;
+            }
+
+
+            .restricted-access {
+
+                grid-column: 1;
+
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+
+
             footer {
+
                 padding: 20px;
             }
-/* =========================
-   VESPER PERSONNEL PROFILE
-========================= */
 
-.personnel-profile {
-    padding-top: 35px;
-
-    display: grid;
-
-    grid-template-columns: 230px 1fr;
-
-    column-gap: 35px;
-
-    row-gap: 30px;
-}
-
-
-/* =========================
-   PHOTO
-========================= */
-
-.personnel-photo {
-    width: 230px;
-    height: 300px;
-
-    border: 1px solid #30363a;
-
-    background: #111518;
-
-    overflow: hidden;
-}
-
-.personnel-photo img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-    object-position: center;
-}
-
-
-/* =========================
-   INFORMATION
-========================= */
-
-.personnel-info {
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    align-content: start;
-
-    gap: 0;
-
-    border-top: 1px solid #252a2e;
-}
-
-
-.info-item {
-    padding: 17px 15px;
-
-    border-bottom: 1px solid #252a2e;
-    border-right: 1px solid #252a2e;
-}
-
-.info-item:nth-child(even) {
-    border-right: none;
-}
-
-
-.info-label {
-    margin-bottom: 8px;
-
-    color: #555b60;
-
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: 7px;
-
-    letter-spacing: 2px;
-}
-
-
-.info-value {
-    color: #d9dde0;
-
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-}
-
-
-.active-value {
-    color: #4ade80;
-}
-
-
-.omega {
-    color: #b91c1c;
-
-    font-weight: 600;
-}
-
-
-/* =========================
-   NOTES
-========================= */
-
-.personnel-notes {
-    grid-column: 1 / -1;
-
-    padding-top: 5px;
-
-    border-top: 1px solid #252a2e;
-}
-
-
-.personnel-notes p {
-    max-width: 900px;
-
-    margin: 0;
-
-    color: #858b90;
-
-    font-size: 12px;
-
-    line-height: 1.9;
-}
-
-
-/* =========================
-   RESTRICTED ACCESS
-========================= */
-
-.restricted-access {
-    grid-column: 1 / -1;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 20px;
-
-    margin-top: 5px;
-
-    padding: 20px;
-
-    border: 1px solid #302022;
-
-    background: #0d0b0c;
-}
-
-
-.restricted-icon {
-    width: 40px;
-    height: 40px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    flex-shrink: 0;
-
-    border: 1px solid #552226;
-
-    color: #b91c1c;
-
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: 12px;
-}
-
-
-.restricted-text {
-    flex: 1;
-}
-
-
-.restricted-title {
-    color: #d9dde0;
-
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 2px;
-}
-
-
-.restricted-subtitle {
-    margin-top: 7px;
-
-    color: #555b60;
-
-    font-size: 8px;
-
-    letter-spacing: 1px;
-}
-
-
-.access-button {
-    padding: 12px 18px;
-
-    border: 1px solid #552226;
-
-    background: transparent;
-
-    color: #b91c1c;
-
-    font-family: 'Orbitron', sans-serif;
-
-    font-size: 8px;
-
-    letter-spacing: 1px;
-
-    cursor: pointer;
-
-    transition: 0.2s ease;
-}
-
-
-.access-button:hover {
-    background: #b91c1c;
-
-    color: white;
-
-    border-color: #b91c1c;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 750px) {
-
-    .personnel-profile {
-        grid-template-columns: 1fr;
-    }
-
-    .personnel-photo {
-        width: 180px;
-        height: 230px;
-    }
-
-    .personnel-info {
-        grid-column: 1;
-    }
-
-    .personnel-notes,
-    .restricted-access {
-        grid-column: 1;
-    }
-
-    .restricted-access {
-        align-items: flex-start;
-
-        flex-direction: column;
-    }
-
-}
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-<!-- =========================
+<!-- ==================================================
      HEADER
-========================= -->
+================================================== -->
 
 <header>
+
 
     <a href="index.html" class="brand">
 
@@ -1029,14 +1156,14 @@
 
 
 
-<!-- =========================
+<!-- ==================================================
      MAIN
-========================= -->
+================================================== -->
 
 <main>
 
 
-    <!-- PAGE TITLE -->
+    <!-- PAGE HEADER -->
 
     <section class="page-header">
 
@@ -1054,16 +1181,16 @@
 
 
 
-    <!-- =========================
+    <!-- ==================================================
          DATABASE INTERFACE
-    ========================= -->
+    ================================================== -->
 
     <section class="database-interface">
 
 
-        <!-- =====================
-             LEFT SIDE
-        ====================== -->
+        <!-- ==================================================
+             LEFT DIRECTORY
+        ================================================== -->
 
         <div class="directory">
 
@@ -1079,12 +1206,14 @@
                     PERSONNEL
                 </button>
 
+
                 <button
                     class="tab"
                     onclick="showTab('records', this)"
                 >
                     RECORDS
                 </button>
+
 
                 <button
                     class="tab"
@@ -1096,7 +1225,8 @@
             </div>
 
 
-            <!-- DIRECTORY TITLE -->
+
+            <!-- DIRECTORY HEADER -->
 
             <div
                 class="directory-header"
@@ -1107,9 +1237,9 @@
 
 
 
-            <!-- =====================
-                 PERSONNEL
-            ====================== -->
+            <!-- ==================================================
+                 PERSONNEL LIST
+            ================================================== -->
 
             <div
                 class="card-list"
@@ -1130,6 +1260,7 @@
                         alt="Vesper"
                     >
 
+
                     <div class="card-info">
 
                         <div class="card-id">
@@ -1145,6 +1276,7 @@
                         </div>
 
                     </div>
+
 
                     <div class="card-status">
                         ACTIVE
@@ -1167,6 +1299,7 @@
                         alt="Personnel"
                     >
 
+
                     <div class="card-info">
 
                         <div class="card-id">
@@ -1183,26 +1316,27 @@
 
                     </div>
 
+
                     <div class="card-status">
                         ACTIVE
                     </div>
 
                 </button>
 
-
             </div>
 
 
 
-            <!-- =====================
-                 RECORDS
-            ====================== -->
+            <!-- ==================================================
+                 RECORDS LIST
+            ================================================== -->
 
             <div
                 class="card-list"
                 id="records-list"
                 style="display: none;"
             >
+
 
                 <button
                     class="database-card"
@@ -1223,6 +1357,7 @@
                         //
                     </div>
 
+
                     <div class="card-info">
 
                         <div class="card-id">
@@ -1239,11 +1374,13 @@
 
                     </div>
 
+
                     <div class="card-status">
                         SEALED
                     </div>
 
                 </button>
+
 
 
                 <button
@@ -1265,6 +1402,7 @@
                         //
                     </div>
 
+
                     <div class="card-info">
 
                         <div class="card-id">
@@ -1281,6 +1419,7 @@
 
                     </div>
 
+
                     <div class="card-status">
                         SEALED
                     </div>
@@ -1291,15 +1430,16 @@
 
 
 
-            <!-- =====================
-                 EQUIPMENT
-            ====================== -->
+            <!-- ==================================================
+                 EQUIPMENT LIST
+            ================================================== -->
 
             <div
                 class="card-list"
                 id="equipment-list"
                 style="display: none;"
             >
+
 
                 <button
                     class="database-card"
@@ -1320,6 +1460,7 @@
                         //
                     </div>
 
+
                     <div class="card-info">
 
                         <div class="card-id">
@@ -1336,11 +1477,13 @@
 
                     </div>
 
+
                     <div class="card-status">
                         ACTIVE
                     </div>
 
                 </button>
+
 
 
                 <button
@@ -1362,6 +1505,7 @@
                         //
                     </div>
 
+
                     <div class="card-info">
 
                         <div class="card-id">
@@ -1378,6 +1522,7 @@
 
                     </div>
 
+
                     <div class="card-status">
                         ACTIVE
                     </div>
@@ -1386,14 +1531,13 @@
 
             </div>
 
-
         </div>
 
 
 
-        <!-- =========================
-             RIGHT SIDE
-        ========================== -->
+        <!-- ==================================================
+             RIGHT DETAIL PANEL
+        ================================================== -->
 
         <div class="details">
 
@@ -1412,215 +1556,219 @@
 
             <!-- ==================================================
                  VESPER
-            =================================================== -->
+            ================================================== -->
 
-           <div
-    class="detail-content visible"
-    id="vesper"
->
-
-    <div class="detail-top">
-
-        <div>
-
-            <div class="detail-category">
-                PERSONNEL // V-07
-            </div>
-
-            <h2 class="detail-name">
-                VESPER
-            </h2>
-
-            <div class="detail-role">
-                FIELD OPERATIVE // SPECIAL OPERATIONS
-            </div>
-
-        </div>
-
-        <div class="detail-status">
-            ● ACTIVE
-        </div>
-
-    </div>
-
-
-    <div class="personnel-profile">
-
-
-        <!-- =========================
-             VESPER PHOTO
-        ========================== -->
-
-        <div class="personnel-photo">
-
-            <img
-                src="./Vesper.jpg"
-                alt="Vesper"
+            <div
+                class="detail-content visible"
+                id="vesper"
             >
 
-        </div>
+
+                <div class="detail-top">
 
 
+                    <div>
 
-        <!-- =========================
-             PERSONNEL INFORMATION
-        ========================== -->
-
-        <div class="personnel-info">
+                        <div class="detail-category">
+                            PERSONNEL // V-07
+                        </div>
 
 
-            <div class="info-item">
+                        <h2 class="detail-name">
+                            VESPER
+                        </h2>
 
-                <div class="info-label">
-                    ROLE
+
+                        <div class="detail-role">
+                            FIELD OPERATIVE // SPECIAL OPERATIONS
+                        </div>
+
+                    </div>
+
+
+                    <div class="detail-status">
+                        ● ACTIVE
+                    </div>
+
                 </div>
 
-                <div class="info-value">
-                    OPERATIVE
+
+
+                <div class="personnel-profile">
+
+
+                    <!-- PHOTO -->
+
+                    <div class="personnel-photo">
+
+                        <img
+                            src="./Vesper.jpg"
+                            alt="Vesper"
+                        >
+
+                    </div>
+
+
+
+                    <!-- INFORMATION -->
+
+                    <div class="personnel-info">
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                ROLE
+                            </div>
+
+                            <div class="info-value">
+                                OPERATIVE
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                DIVISION
+                            </div>
+
+                            <div class="info-value">
+                                FIELD OPERATIONS
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                RANK
+                            </div>
+
+                            <div class="info-value">
+                                ███████
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                STATUS
+                            </div>
+
+                            <div class="info-value active-value">
+                                ACTIVE
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                CLEARANCE LEVEL
+                            </div>
+
+                            <div class="info-value omega">
+                                OMEGA
+                            </div>
+
+                        </div>
+
+
+                        <div class="info-item">
+
+                            <div class="info-label">
+                                DATE OF BIRTH
+                            </div>
+
+                            <div class="info-value">
+                                ██ / ██ / ████
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- NOTES -->
+
+                    <div class="personnel-notes">
+
+                        <div class="detail-label">
+                            NOTES
+                        </div>
+
+
+                        <p>
+
+                            V-07 is an active field operative assigned
+                            to specialized operations under BID
+                            jurisdiction.
+
+                            <br><br>
+
+                            Personnel are advised to maintain
+                            operational discretion when interacting
+                            with V-07. Additional information regarding
+                            assignment history, psychological
+                            evaluation, and operational records
+                            remains restricted.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- RESTRICTED FILE -->
+
+                    <div class="restricted-access">
+
+
+                        <div class="restricted-icon">
+                            //
+                        </div>
+
+
+                        <div class="restricted-text">
+
+                            <div class="restricted-title">
+                                RESTRICTED PERSONNEL FILE
+                            </div>
+
+                            <div class="restricted-subtitle">
+                                ADDITIONAL INFORMATION REQUIRES
+                                SECURITY CLEARANCE
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="access-button"
+                            onclick="requestAccess()"
+                        >
+                            ACCESS FILE
+                        </button>
+
+                    </div>
+
+
                 </div>
 
             </div>
-
-
-            <div class="info-item">
-
-                <div class="info-label">
-                    DIVISION
-                </div>
-
-                <div class="info-value">
-                    FIELD OPERATIONS
-                </div>
-
-            </div>
-
-
-            <div class="info-item">
-
-                <div class="info-label">
-                    RANK
-                </div>
-
-                <div class="info-value">
-                    ███████
-                </div>
-
-            </div>
-
-
-            <div class="info-item">
-
-                <div class="info-label">
-                    STATUS
-                </div>
-
-                <div class="info-value active-value">
-                    ACTIVE
-                </div>
-
-            </div>
-
-
-            <div class="info-item">
-
-                <div class="info-label">
-                    CLEARANCE LEVEL
-                </div>
-
-                <div class="info-value omega">
-                    OMEGA
-                </div>
-
-            </div>
-
-
-            <div class="info-item">
-
-                <div class="info-label">
-                    DATE OF BIRTH
-                </div>
-
-                <div class="info-value">
-                    ██ / ██ / ████
-                </div>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- =========================
-             NOTES
-        ========================== -->
-
-        <div class="personnel-notes">
-
-            <div class="detail-label">
-                NOTES
-            </div>
-
-            <p>
-
-                V-07 is an active field operative assigned
-                to specialized operations under BID
-                jurisdiction.
-
-                <br><br>
-
-                Personnel are advised to maintain operational
-                discretion when interacting with V-07.
-                Additional information regarding assignment
-                history, psychological evaluation, and
-                operational records remains restricted.
-
-            </p>
-
-        </div>
-
-
-        <!-- =========================
-             RESTRICTED ACCESS
-        ========================== -->
-
-        <div class="restricted-access">
-
-            <div class="restricted-icon">
-                //
-            </div>
-
-            <div class="restricted-text">
-
-                <div class="restricted-title">
-                    RESTRICTED PERSONNEL FILE
-                </div>
-
-                <div class="restricted-subtitle">
-                    ADDITIONAL INFORMATION REQUIRES
-                    SECURITY CLEARANCE
-                </div>
-
-            </div>
-
-            <button
-                class="access-button"
-                onclick="requestAccess()"
-            >
-                ACCESS FILE
-            </button>
-
-        </div>
-
-
-    </div>
-
-</div>
 
 
 
             <!-- ==================================================
                  PERSON TWO
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1674,7 +1822,7 @@
 
             <!-- ==================================================
                  RECORD ONE
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1731,7 +1879,7 @@
 
             <!-- ==================================================
                  RECORD TWO
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1788,7 +1936,7 @@
 
             <!-- ==================================================
                  EQUIPMENT ONE
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1844,7 +1992,7 @@
 
             <!-- ==================================================
                  EQUIPMENT TWO
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1907,9 +2055,9 @@
 
 
 
-<!-- =========================
+<!-- ==================================================
      FOOTER
-========================= -->
+================================================== -->
 
 <footer>
 
@@ -1919,9 +2067,9 @@
 
 
 
-<!-- =========================
+<!-- ==================================================
      JAVASCRIPT
-========================= -->
+================================================== -->
 
 <script>
 
@@ -1933,8 +2081,6 @@
     function showTab(tab, button) {
 
 
-        /* Hide every card list */
-
         document.getElementById("personnel-list").style.display = "none";
 
         document.getElementById("records-list").style.display = "none";
@@ -1942,25 +2088,18 @@
         document.getElementById("equipment-list").style.display = "none";
 
 
-        /* Show selected list */
-
         document.getElementById(tab + "-list").style.display = "block";
 
 
-        /* Update active tab */
-
-        const tabs = document.querySelectorAll(".tab");
-
-        tabs.forEach(function(item) {
+        document.querySelectorAll(".tab").forEach(function(item) {
 
             item.classList.remove("active");
 
         });
 
+
         button.classList.add("active");
 
-
-        /* Update directory title */
 
         const titles = {
 
@@ -1972,11 +2111,10 @@
 
         };
 
+
         document.getElementById("directory-header").textContent =
             titles[tab];
 
-
-        /* Hide all detail pages */
 
         document.querySelectorAll(".detail-content").forEach(function(item) {
 
@@ -1985,13 +2123,9 @@
         });
 
 
-        /* Show placeholder */
-
         document.getElementById("detail-placeholder").style.display =
             "flex";
 
-
-        /* Remove selected card from every tab */
 
         document.querySelectorAll(".database-card").forEach(function(item) {
 
@@ -2010,8 +2144,6 @@
     function showDetail(id, card) {
 
 
-        /* Remove selected state */
-
         document.querySelectorAll(".database-card").forEach(function(item) {
 
             item.classList.remove("selected");
@@ -2019,12 +2151,8 @@
         });
 
 
-        /* Select clicked card */
-
         card.classList.add("selected");
 
-
-        /* Hide every detail */
 
         document.querySelectorAll(".detail-content").forEach(function(item) {
 
@@ -2033,52 +2161,72 @@
         });
 
 
-        /* Show selected detail */
-
         document.getElementById(id).classList.add("visible");
 
-
-        /* Hide placeholder */
 
         document.getElementById("detail-placeholder").style.display =
             "none";
 
     }
-function requestAccess() {
 
-    const password = prompt(
-        "BID INTERNAL SECURITY\n\n" +
-        "RESTRICTED PERSONNEL FILE: V-07\n\n" +
-        "ENTER AUTHORIZATION CODE:"
-    );
 
-    if (password === null) {
-        return;
-    }
 
-    if (password === "OMEGA-07") {
+    /* ==================================================
+       RESTRICTED VESPER FILE
+    ================================================== */
 
-        alert(
-            "ACCESS GRANTED.\n\n" +
-            "Additional V-07 records unlocked."
+    function requestAccess() {
+
+
+        const password = prompt(
+
+            "BID INTERNAL SECURITY\n\n" +
+
+            "RESTRICTED PERSONNEL FILE: V-07\n\n" +
+
+            "ENTER AUTHORIZATION CODE:"
+
         );
 
-        // We will replace this later with the actual
-        // restricted Vesper file.
 
-    } else {
+        if (password === null) {
 
-        alert(
-            "ACCESS DENIED.\n\n" +
-            "INSUFFICIENT CLEARANCE."
-        );
+            return;
+
+        }
+
+
+        if (password === "OMEGA-07") {
+
+
+            alert(
+
+                "ACCESS GRANTED.\n\n" +
+
+                "Additional V-07 records unlocked."
+
+            );
+
+
+        } else {
+
+
+            alert(
+
+                "ACCESS DENIED.\n\n" +
+
+                "INSUFFICIENT CLEARANCE."
+
+            );
+
+        }
 
     }
 
-}
 
 </script>
 
 
 </body>
+
 </html>
