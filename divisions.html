@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DIVISIONS // BID</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #080a0c;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 32px 50px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #1d2125;
+        }
+
+
+        .brand {
+            text-decoration: none;
+            color: white;
+            line-height: 1;
+        }
+
+        .brand-main {
+            display: block;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 30px;
+            font-weight: 700;
+
+            letter-spacing: 7px;
+        }
+
+        .brand-sub {
+            display: block;
+
+            margin-top: 8px;
+
+            font-size: 9px;
+            letter-spacing: 2px;
+
+            color: #777d81;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 34px;
+
+            padding-top: 4px;
+        }
+
+        nav a {
+            position: relative;
+
+            color: #777d81;
+
+            text-decoration: none;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 1px;
+
+            background: #b91c1c;
+
+            transition: width 0.2s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        nav a.active {
+            color: white;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1400px;
+
+            margin: auto;
+
+            padding: 100px 70px 120px;
+        }
+
+
+        /* =========================
+           PAGE INTRO
+        ========================= */
+
+        .page-header {
+            margin-bottom: 70px;
+        }
+
+        .eyebrow {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(50px, 7vw, 100px);
+
+            line-height: 0.95;
+
+            letter-spacing: 5px;
+        }
+
+        .intro-line {
+            width: 75px;
+
+            height: 2px;
+
+            background: #b91c1c;
+
+            margin-top: 35px;
+        }
+
+
+        /* =========================
+           DIVISION GRID
+        ========================= */
+
+        .division-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+
+        /* =========================
+           DIVISION CARD
+        ========================= */
+
+        .division-card {
+            position: relative;
+
+            min-height: 280px;
+
+            padding: 35px;
+
+            border: 1px solid #252a2e;
+
+            background: #0c0f12;
+
+            overflow: hidden;
+
+            transition:
+                border-color 0.25s ease,
+                background 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .division-card:hover {
+            border-color: #444b50;
+
+            background: #0f1215;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* LARGE NUMBER */
+
+        .division-number {
+            position: absolute;
+
+            top: 20px;
+            right: 25px;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 55px;
+
+            font-weight: 700;
+
+            color: #15191c;
+
+            line-height: 1;
+        }
+
+
+        /* CARD CONTENT */
+
+        .division-code {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 20px;
+        }
+
+        .division-card h2 {
+            position: relative;
+
+            margin: 0;
+
+            max-width: 500px;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 22px;
+
+            font-weight: 600;
+
+            letter-spacing: 1px;
+
+            line-height: 1.3;
+        }
+
+        .division-card p {
+            position: relative;
+
+            max-width: 520px;
+
+            margin-top: 20px;
+
+            color: #858b90;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* CARD FOOTER */
+
+        .division-footer {
+            position: absolute;
+
+            bottom: 25px;
+            left: 35px;
+            right: 35px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding-top: 15px;
+
+            border-top: 1px solid #1d2125;
+        }
+
+        .division-status {
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+        .division-arrow {
+            color: #555b60;
+
+            font-size: 14px;
+
+            transition: color 0.2s ease;
+        }
+
+        .division-card:hover .division-arrow {
+            color: #b91c1c;
+        }
+
+
+        /* =========================
+           WIDE CARD
+        ========================= */
+
+        .division-card.wide {
+            grid-column: span 2;
+
+            min-height: 240px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #1d2125;
+
+            padding: 20px 50px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            header {
+                padding: 25px;
+            }
+
+            nav {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: flex-end;
+            }
+
+            main {
+                padding: 70px 30px 90px;
+            }
+
+            .division-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .division-card.wide {
+                grid-column: span 1;
+            }
+
+            footer {
+                padding: 20px 25px;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 550px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 25px;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            main {
+                padding: 60px 20px 80px;
+            }
+
+            .division-card {
+                padding: 28px;
+
+                min-height: 300px;
+            }
+
+            .division-footer {
+                left: 28px;
+                right: 28px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-main">
+            BID
+        </span>
+
+        <span class="brand-sub">
+            BUREAU OF INTERNATIONAL DEFENSE
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">HOME</a>
+
+        <a href="about.html">ABOUT</a>
+
+        <a href="divisions.html" class="active">DIVISIONS</a>
+
+        <a href="database.html">DATABASE</a>
+
+        <a href="locations.html">LOCATIONS</a>
+
+        <a href="archive.html">ARCHIVE</a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main>
+
+
+    <section class="page-header">
+
+        <div class="eyebrow">
+            BID // INTERNAL STRUCTURE
+        </div>
+
+        <h1>
+            OUR<br>
+            DIVISIONS
+        </h1>
+
+        <div class="intro-line"></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         DIVISIONS
+    ========================= -->
+
+    <section class="division-grid">
+
+
+        <!-- 01 -->
+
+        <article class="division-card">
+
+            <div class="division-number">
+                01
+            </div>
+
+            <div class="division-code">
+                DIVISION // 01
+            </div>
+
+            <h2>
+                DIVISION HEADS
+            </h2>
+
+            <p>
+                Senior personnel responsible for overseeing
+                BID's major operational sectors. Division Heads
+                lead departments including Cyber Intelligence,
+                Field Operations, PsyOps, and Analysis, ensuring
+                that each sector operates efficiently and in
+                accordance with BID directives.
+            </p>
+
+            <div class="division-footer">
+
+                <span class="division-status">
+                    COMMAND LEVEL
+                </span>
+
+                <span class="division-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 02 -->
+
+        <article class="division-card">
+
+            <div class="division-number">
+                02
+            </div>
+
+            <div class="division-code">
+                DIVISION // 02
+            </div>
+
+            <h2>
+                HANDLERS / CASE OFFICERS
+            </h2>
+
+            <p>
+                The operational link between BID command and
+                field personnel. Handlers assign missions,
+                gather intelligence, coordinate logistics, and
+                maintain communication with agents throughout
+                active operations.
+            </p>
+
+            <div class="division-footer">
+
+                <span class="division-status">
+                    OPERATIONS SUPPORT
+                </span>
+
+                <span class="division-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 03 -->
+
+        <article class="division-card">
+
+            <div class="division-number">
+                03
+            </div>
+
+            <div class="division-code">
+                DIVISION // 03
+            </div>
+
+            <h2>
+                FIELD AGENTS
+            </h2>
+
+            <p>
+                BID operatives trained for high-risk assignments
+                including black operations, infiltration,
+                surveillance, extraction, and counterintelligence.
+                Field Agents are deployed where conventional
+                methods are considered insufficient.
+            </p>
+
+            <div class="division-footer">
+
+                <span class="division-status">
+                    FIELD OPERATIONS
+                </span>
+
+                <span class="division-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 04 -->
+
+        <article class="division-card">
+
+            <div class="division-number">
+                04
+            </div>
+
+            <div class="division-code">
+                DIVISION // 04
+            </div>
+
+            <h2>
+                TECH ANALYSTS & ENGINEERS
+            </h2>
+
+            <p>
+                Specialists responsible for maintaining BID's
+                technological infrastructure. Their work includes
+                cyber defense systems, drones, AI surveillance,
+                communications equipment, and specialized
+                field technology.
+            </p>
+
+            <div class="division-footer">
+
+                <span class="division-status">
+                    TECHNICAL OPERATIONS
+                </span>
+
+                <span class="division-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 05 -->
+
+        <article class="division-card wide">
+
+            <div class="division-number">
+                05
+            </div>
+
+            <div class="division-code">
+                DIVISION // 05
+            </div>
+
+            <h2>
+                MEDICAL OFFICERS
+            </h2>
+
+            <p>
+                Medical personnel responsible for maintaining the
+                physical and psychological stability of BID staff.
+                Medical Officers treat injuries sustained during
+                operations, oversee rehabilitation, monitor long-term
+                health, and evaluate the psychological readiness of
+                personnel returning to the field.
+            </p>
+
+            <div class="division-footer">
+
+                <span class="division-status">
+                    MEDICAL & PSYCHOLOGICAL SERVICES
+                </span>
+
+                <span class="division-arrow">
+                    →
+                </span>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+</main>
+
+
+
+<footer>
+
+    BID // INTERNAL DATABASE // EST. 1976
+
+</footer>
+
+
+</body>
+</html>
