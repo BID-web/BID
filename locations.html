@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LOCATIONS // BID</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #080a0c;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            width: 100%;
+            padding: 32px 50px;
+
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            border-bottom: 1px solid #1d2125;
+        }
+
+
+        .brand {
+            text-decoration: none;
+            color: white;
+            line-height: 1;
+        }
+
+
+        .brand-main {
+            display: block;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 30px;
+            font-weight: 700;
+
+            letter-spacing: 7px;
+        }
+
+
+        .brand-sub {
+            display: block;
+
+            margin-top: 8px;
+
+            font-size: 9px;
+            letter-spacing: 2px;
+
+            color: #777d81;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+
+            padding-top: 4px;
+        }
+
+
+        nav a {
+            position: relative;
+
+            color: #777d81;
+
+            text-decoration: none;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 9px;
+            letter-spacing: 2px;
+
+            transition: color 0.2s ease;
+        }
+
+
+        nav a:hover,
+        nav a.active {
+            color: white;
+        }
+
+
+        nav a::after {
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -8px;
+
+            width: 0;
+            height: 1px;
+
+            background: #b91c1c;
+
+            transition: width 0.2s ease;
+        }
+
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1600px;
+
+            margin: auto;
+
+            padding: 90px 60px 120px;
+        }
+
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+
+        .page-header {
+            margin-bottom: 50px;
+        }
+
+
+        .eyebrow {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        h1 {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(50px, 7vw, 95px);
+
+            letter-spacing: 5px;
+
+            line-height: 0.95;
+        }
+
+
+        .red-line {
+            width: 75px;
+            height: 2px;
+
+            background: #b91c1c;
+
+            margin-top: 35px;
+        }
+
+
+        /* =========================
+           LOCATION FILTERS
+        ========================= */
+
+        .location-filters {
+            display: flex;
+
+            align-items: center;
+
+            border-top: 1px solid #252a2e;
+            border-bottom: 1px solid #252a2e;
+
+            margin-bottom: 35px;
+        }
+
+
+        .filter-button {
+            position: relative;
+
+            padding: 19px 30px;
+
+            border: none;
+            border-right: 1px solid #252a2e;
+
+            background: transparent;
+
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+
+        .filter-button:last-child {
+            border-right: none;
+        }
+
+
+        .filter-button:hover {
+            color: white;
+        }
+
+
+        .filter-button.active {
+            color: white;
+
+            background: #0e1114;
+
+            box-shadow: inset 0 -2px 0 #b91c1c;
+        }
+
+
+        /* =========================
+           LOCATION GRID
+        ========================= */
+
+        .locations-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* =========================
+           LOCATION CARD
+        ========================= */
+
+        .location-card {
+            position: relative;
+
+            min-height: 430px;
+
+            overflow: hidden;
+
+            border: 1px solid #202529;
+
+            background: #0d1013;
+
+            cursor: pointer;
+
+            transition:
+                border-color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .location-card:hover {
+            border-color: #4a5055;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           LOCATION IMAGE
+        ========================= */
+
+        .location-image {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition:
+                transform 0.5s ease,
+                filter 0.5s ease;
+        }
+
+
+        .location-card:hover .location-image {
+            transform: scale(1.03);
+        }
+
+
+        /* =========================
+           IMAGE OVERLAY
+        ========================= */
+
+        .location-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(5, 7, 9, 0.98) 0%,
+                    rgba(5, 7, 9, 0.78) 25%,
+                    rgba(5, 7, 9, 0.25) 60%,
+                    rgba(5, 7, 9, 0.05) 100%
+                );
+        }
+
+
+        /* =========================
+           NO IMAGE PLACEHOLDER
+        ========================= */
+
+        .location-placeholder {
+            position: absolute;
+
+            inset: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0c0f11,
+                    #111518
+                );
+
+            color: #30363a;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 10px;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* =========================
+           LOCATION INFORMATION
+        ========================= */
+
+        .location-info {
+            position: absolute;
+
+            left: 30px;
+            right: 30px;
+            bottom: 28px;
+
+            z-index: 2;
+        }
+
+
+        .location-type {
+            margin-bottom: 9px;
+
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+        }
+
+
+        .location-name {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(22px, 3vw, 36px);
+
+            letter-spacing: 2px;
+
+            line-height: 1.1;
+        }
+
+
+        .location-description {
+            margin-top: 12px;
+
+            max-width: 600px;
+
+            color: #9ca2a6;
+
+            font-size: 11px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           ACCESS INDICATOR
+        ========================= */
+
+        .location-access {
+            position: absolute;
+
+            top: 22px;
+            right: 22px;
+
+            z-index: 3;
+
+            padding: 8px 11px;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            background: rgba(5,7,9,0.65);
+
+            color: #777d81;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 7px;
+
+            letter-spacing: 2px;
+
+            backdrop-filter: blur(5px);
+        }
+
+
+        .location-card:hover .location-access {
+            color: white;
+
+            border-color: #b91c1c;
+        }
+
+
+        /* =========================
+           HIDDEN FILTER ITEMS
+        ========================= */
+
+        .location-card.hidden {
+            display: none;
+        }
+
+
+        /* =========================
+           LOCATION FILE MODAL
+        ========================= */
+
+        .location-modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 100;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+
+            background: rgba(3,5,6,0.88);
+
+            backdrop-filter: blur(8px);
+        }
+
+
+        .location-modal.visible {
+            display: flex;
+        }
+
+
+        .modal-box {
+            width: min(700px, 100%);
+
+            padding: 45px;
+
+            border: 1px solid #30363a;
+
+            background: #0b0e10;
+
+            box-shadow:
+                0 25px 80px rgba(0,0,0,0.6);
+        }
+
+
+        .modal-eyebrow {
+            color: #b91c1c;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .modal-title {
+            margin: 0;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 32px;
+
+            letter-spacing: 2px;
+        }
+
+
+        .modal-line {
+            width: 55px;
+            height: 2px;
+
+            background: #b91c1c;
+
+            margin: 25px 0;
+        }
+
+
+        .modal-text {
+            color: #858b90;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+
+        .modal-close {
+            margin-top: 30px;
+
+            padding: 12px 20px;
+
+            border: 1px solid #30363a;
+
+            background: transparent;
+
+            color: #777d81;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+
+        .modal-close:hover {
+            color: white;
+
+            border-color: #b91c1c;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #1d2125;
+
+            padding: 20px 50px;
+
+            color: #555b60;
+
+            font-size: 8px;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 1000px) {
+
+            header {
+                padding: 25px;
+            }
+
+            nav {
+                gap: 15px;
+
+                flex-wrap: wrap;
+
+                justify-content: flex-end;
+            }
+
+            main {
+                padding: 70px 30px 90px;
+            }
+
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            header {
+                flex-direction: column;
+
+                gap: 25px;
+            }
+
+            nav {
+                justify-content: flex-start;
+
+                gap: 15px;
+            }
+
+            main {
+                padding: 60px 20px 80px;
+            }
+
+            .location-filters {
+                overflow-x: auto;
+            }
+
+            .filter-button {
+                flex-shrink: 0;
+
+                padding: 17px 20px;
+            }
+
+            .location-card {
+                min-height: 350px;
+            }
+
+            .location-info {
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+            }
+
+            .location-access {
+                top: 15px;
+                right: 15px;
+            }
+
+            .modal-box {
+                padding: 30px 25px;
+            }
+
+            footer {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <a href="index.html" class="brand">
+
+        <span class="brand-main">
+            BID
+        </span>
+
+        <span class="brand-sub">
+            BUREAU OF INTERNATIONAL DEFENSE
+        </span>
+
+    </a>
+
+
+    <nav>
+
+        <a href="index.html">
+            HOME
+        </a>
+
+        <a href="about.html">
+            ABOUT
+        </a>
+
+        <a href="divisions.html">
+            DIVISIONS
+        </a>
+
+        <a href="database.html">
+            DATABASE
+        </a>
+
+        <a href="locations.html" class="active">
+            LOCATIONS
+        </a>
+
+        <a href="archive.html">
+            ARCHIVE
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+    <!-- =========================
+         PAGE HEADER
+    ========================== -->
+
+    <section class="page-header">
+
+        <div class="eyebrow">
+            BID // GLOBAL OPERATIONS
+        </div>
+
+        <h1>
+            LOCATIONS
+        </h1>
+
+        <div class="red-line"></div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FILTERS
+    ========================== -->
+
+    <div class="location-filters">
+
+        <button
+            class="filter-button active"
+            onclick="filterLocations('all', this)"
+        >
+            ALL
+        </button>
+
+        <button
+            class="filter-button"
+            onclick="filterLocations('headquarters', this)"
+        >
+            HEADQUARTERS
+        </button>
+
+        <button
+            class="filter-button"
+            onclick="filterLocations('facilities', this)"
+        >
+            FACILITIES
+        </button>
+
+        <button
+            class="filter-button"
+            onclick="filterLocations('outposts', this)"
+        >
+            OUTPOSTS
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         LOCATION GRID
+    ========================== -->
+
+    <section class="locations-grid" id="locations-grid">
+
+
+        <!-- ==================================================
+             BID HEADQUARTERS
+        =================================================== -->
+
+        <article
+            class="location-card"
+            data-type="headquarters"
+            onclick="openLocation(
+                'BID HEADQUARTERS',
+                'THE CITADEL',
+                'Primary headquarters of the Bureau of International Defense. The Citadel serves as the central command structure for BID operations, intelligence coordination, personnel administration, and high-level strategic planning.'
+            )"
+        >
+
+            <img
+                class="location-image"
+                src="./BID-BUILDING.JPG"
+                alt="BID Headquarters"
+            >
+
+            <div class="location-overlay"></div>
+
+            <div class="location-access">
+                VIEW FILE →
+            </div>
+
+            <div class="location-info">
+
+                <div class="location-type">
+                    HEADQUARTERS
+                </div>
+
+                <h2 class="location-name">
+                    THE CITADEL
+                </h2>
+
+                <div class="location-description">
+                    PRIMARY HEADQUARTERS // CENTRAL COMMAND
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             OUTPOST
+        =================================================== -->
+
+        <article
+            class="location-card"
+            data-type="outposts"
+            onclick="openLocation(
+                'BID OUTPOST',
+                'OUTPOST // UNKNOWN',
+                'Remote BID facility operating outside the primary organizational network. Outposts are used for surveillance, field operations, intelligence gathering, emergency staging, and other operations requiring geographic separation from central command.'
+            )"
+        >
+
+            <img
+                class="location-image"
+                src="./BID-Outpost.jpg"
+                alt="BID Outpost"
+            >
+
+            <div class="location-overlay"></div>
+
+            <div class="location-access">
+                VIEW FILE →
+            </div>
+
+            <div class="location-info">
+
+                <div class="location-type">
+                    OUTPOST
+                </div>
+
+                <h2 class="location-name">
+                    OUTPOST // UNKNOWN
+                </h2>
+
+                <div class="location-description">
+                    REMOTE OPERATIONS // LOCATION CLASSIFIED
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             FACILITY PLACEHOLDER
+        =================================================== -->
+
+        <article
+            class="location-card"
+            data-type="facilities"
+            onclick="openLocation(
+                'BID FACILITY',
+                'THE ARCHIVE',
+                'Central repository for classified documentation, historical records, mission reports, intelligence files, and materials deemed too sensitive for standard database storage.'
+            )"
+        >
+
+            <div class="location-placeholder">
+                IMAGE REQUIRED
+            </div>
+
+            <div class="location-overlay"></div>
+
+            <div class="location-access">
+                VIEW FILE →
+            </div>
+
+            <div class="location-info">
+
+                <div class="location-type">
+                    FACILITY
+                </div>
+
+                <h2 class="location-name">
+                    THE ARCHIVE
+                </h2>
+
+                <div class="location-description">
+                    CLASSIFIED RECORDS // INFORMATION STORAGE
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             FACILITY PLACEHOLDER
+        =================================================== -->
+
+        <article
+            class="location-card"
+            data-type="facilities"
+            onclick="openLocation(
+                'BID FACILITY',
+                'MEDICAL WING',
+                'Dedicated medical and psychological facility responsible for the treatment, rehabilitation, and evaluation of BID personnel following field deployment.'
+            )"
+        >
+
+            <div class="location-placeholder">
+                IMAGE REQUIRED
+            </div>
+
+            <div class="location-overlay"></div>
+
+            <div class="location-access">
+                VIEW FILE →
+            </div>
+
+            <div class="location-info">
+
+                <div class="location-type">
+                    FACILITY
+                </div>
+
+                <h2 class="location-name">
+                    MEDICAL WING
+                </h2>
+
+                <div class="location-description">
+                    MEDICAL SERVICES // PERSONNEL RECOVERY
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             HEADQUARTERS PLACEHOLDER
+        =================================================== -->
+
+        <article
+            class="location-card"
+            data-type="headquarters"
+            onclick="openLocation(
+                'BID HEADQUARTERS',
+                'COMMAND CENTER',
+                'The operational nerve center of BID. Mission assignments, global intelligence feeds, emergency communications, and strategic operations are coordinated from this facility.'
+            )"
+        >
+
+            <div class="location-placeholder">
+                IMAGE REQUIRED
+            </div>
+
+            <div class="location-overlay"></div>
+
+            <div class="location-access">
+                VIEW FILE →
+            </div>
+
+            <div class="location-info">
+
+                <div class="location-type">
+                    HEADQUARTERS
+                </div>
+
+                <h2 class="location-name">
+                    COMMAND CENTER
+                </h2>
+
+                <div class="location-description">
+                    OPERATIONS CONTROL // GLOBAL MONITORING
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ==================================================
+             OUTPOST PLACEHOLDER
+        =================================================== -->
+
+        <article
+            class="location-card"
+            data-type="outposts"
+            onclick="openLocation(
+                'BID OUTPOST',
+                'OUTPOST // BLACK',
+                'A classified remote installation maintained for specialized field personnel. Operational details, personnel assignments, and geographic coordinates are restricted.'
+            )"
+        >
+
+            <div class="location-placeholder">
+                IMAGE REQUIRED
+            </div>
+
+            <div class="location-overlay"></div>
+
+            <div class="location-access">
+                VIEW FILE →
+            </div>
+
+            <div class="location-info">
+
+                <div class="location-type">
+                    OUTPOST
+                </div>
+
+                <h2 class="location-name">
+                    OUTPOST // BLACK
+                </h2>
+
+                <div class="location-description">
+                    SPECIAL OPERATIONS // RESTRICTED
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     LOCATION FILE MODAL
+========================= -->
+
+<div
+    class="location-modal"
+    id="location-modal"
+    onclick="closeLocation(event)"
+>
+
+    <div
+        class="modal-box"
+        onclick="event.stopPropagation()"
+    >
+
+        <div
+            class="modal-eyebrow"
+            id="modal-eyebrow"
+        >
+            BID // LOCATION FILE
+        </div>
+
+
+        <h2
+            class="modal-title"
+            id="modal-title"
+        >
+            LOCATION
+        </h2>
+
+
+        <div class="modal-line"></div>
+
+
+        <p
+            class="modal-text"
+            id="modal-text"
+        >
+            Location information unavailable.
+        </p>
+
+
+        <button
+            class="modal-close"
+            onclick="closeLocation()"
+        >
+            CLOSE FILE
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    BID // GLOBAL LOCATION DATABASE // EST. 1976
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+
+    /* ==================================================
+       FILTER LOCATIONS
+    ================================================== */
+
+    function filterLocations(type, button) {
+
+        const cards =
+            document.querySelectorAll(".location-card");
+
+
+        const buttons =
+            document.querySelectorAll(".filter-button");
+
+
+        /* Remove active state */
+
+        buttons.forEach(function(item) {
+
+            item.classList.remove("active");
+
+        });
+
+
+        /* Activate clicked button */
+
+        button.classList.add("active");
+
+
+        /* Show / hide cards */
+
+        cards.forEach(function(card) {
+
+            const cardType =
+                card.getAttribute("data-type");
+
+
+            if (type === "all" || cardType === type) {
+
+                card.classList.remove("hidden");
+
+            } else {
+
+                card.classList.add("hidden");
+
+            }
+
+        });
+
+    }
+
+
+
+    /* ==================================================
+       OPEN LOCATION FILE
+    ================================================== */
+
+    function openLocation(category, title, description) {
+
+        document.getElementById("modal-eyebrow").textContent =
+            "BID // " + category;
+
+
+        document.getElementById("modal-title").textContent =
+            title;
+
+
+        document.getElementById("modal-text").textContent =
+            description;
+
+
+        document.getElementById("location-modal")
+            .classList.add("visible");
+
+    }
+
+
+
+    /* ==================================================
+       CLOSE LOCATION FILE
+    ================================================== */
+
+    function closeLocation(event) {
+
+        if (
+            event &&
+            event.target !== document.getElementById("location-modal")
+        ) {
+            return;
+        }
+
+
+        document.getElementById("location-modal")
+            .classList.remove("visible");
+
+    }
+
+
+
+    /* ==================================================
+       ESC KEY CLOSES MODAL
+    ================================================== */
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+
+            document.getElementById("location-modal")
+                .classList.remove("visible");
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
