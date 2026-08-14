@@ -269,25 +269,40 @@
         }
 
 
-        .bid-logo {
-            width: min(100%, 480px);
+       .bid-logo {
+    width: min(100%, 480px);
+    max-height: 350px;
 
-            max-height: 350px;
+    object-fit: contain;
+    display: block;
 
-            object-fit: contain;
+    margin: 0 auto;
 
-            display: block;
+    opacity: 0.82;
 
-            margin: 0 auto;
+    filter:
+        brightness(0.82)
+        contrast(0.9)
+        saturate(0);
 
-            opacity: 0.92;
+    -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 55%,
+        rgba(0,0,0,0.85) 68%,
+        transparent 100%
+    );
 
-            filter: brightness(0.92);
+    mask-image: radial-gradient(
+        ellipse at center,
+        black 55%,
+        rgba(0,0,0,0.85) 68%,
+        transparent 100%
+    );
 
-            transition:
-                opacity 0.3s ease,
-                transform 0.3s ease;
-        }
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
 
 
         .bid-logo:hover {
