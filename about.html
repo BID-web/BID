@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -152,7 +153,9 @@
         }
 
 
-        /* LEFT SIDE */
+        /* =========================
+           LEFT SIDE
+        ========================= */
 
         .about-text {
             max-width: 600px;
@@ -195,7 +198,9 @@
         }
 
 
-        /* STATEMENTS */
+        /* =========================
+           STATEMENTS
+        ========================= */
 
         .statements {
             margin-top: 45px;
@@ -220,7 +225,9 @@
         }
 
 
-        /* READ MORE */
+        /* =========================
+           READ MORE
+        ========================= */
 
         .read-more {
             display: inline-block;
@@ -252,7 +259,7 @@
 
 
         /* =========================
-           RIGHT SIDE
+           RIGHT SIDE / BID IDENTITY
         ========================= */
 
         .identity {
@@ -261,17 +268,34 @@
             padding: 30px;
         }
 
-        .bid-symbol {
-            font-family: 'Orbitron', sans-serif;
 
-            font-size: clamp(80px, 11vw, 160px);
+        .bid-logo {
+            width: min(100%, 480px);
 
-            font-weight: 700;
+            max-height: 350px;
 
-            letter-spacing: 15px;
+            object-fit: contain;
 
-            color: #e1e3e5;
+            display: block;
+
+            margin: 0 auto;
+
+            opacity: 0.92;
+
+            filter: brightness(0.92);
+
+            transition:
+                opacity 0.3s ease,
+                transform 0.3s ease;
         }
+
+
+        .bid-logo:hover {
+            opacity: 1;
+
+            transform: scale(1.02);
+        }
+
 
         .identity-line {
             width: 50px;
@@ -280,8 +304,9 @@
 
             background: #b91c1c;
 
-            margin: 25px auto;
+            margin: 30px auto 25px;
         }
+
 
         .identity p {
             margin: 0;
@@ -342,7 +367,9 @@
         }
 
 
-        /* LOCATION GRID */
+        /* =========================
+           LOCATION GRID
+        ========================= */
 
         .location-grid {
             display: grid;
@@ -388,7 +415,9 @@
         }
 
 
-        /* DARK GRADIENT */
+        /* =========================
+           DARK GRADIENT
+        ========================= */
 
         .location::after {
             content: "";
@@ -495,6 +524,10 @@
                 order: -1;
             }
 
+            .bid-logo {
+                width: min(80%, 400px);
+            }
+
             .locations {
                 padding: 70px 30px 100px;
             }
@@ -529,6 +562,14 @@
                 padding: 60px 20px;
             }
 
+            .identity {
+                padding: 10px;
+            }
+
+            .bid-logo {
+                width: 90%;
+            }
+
             .locations {
                 padding: 60px 20px 80px;
             }
@@ -550,6 +591,7 @@
         }
 
     </style>
+
 </head>
 
 
@@ -577,17 +619,29 @@
 
     <nav>
 
-        <a href="index.html">HOME</a>
+        <a href="index.html">
+            HOME
+        </a>
 
-        <a href="about.html" class="active">ABOUT</a>
+        <a href="about.html" class="active">
+            ABOUT
+        </a>
 
-        <a href="divisions.html">DIVISIONS</a>
+        <a href="divisions.html">
+            DIVISIONS
+        </a>
 
-        <a href="database.html">DATABASE</a>
+        <a href="database.html">
+            DATABASE
+        </a>
 
-        <a href="locations.html">LOCATIONS</a>
+        <a href="locations.html">
+            LOCATIONS
+        </a>
 
-        <a href="archive.html">ARCHIVE</a>
+        <a href="archive.html">
+            ARCHIVE
+        </a>
 
     </nav>
 
@@ -602,7 +656,9 @@
 <section class="about-section">
 
 
-    <!-- LEFT -->
+    <!-- =========================
+         LEFT
+    ========================= -->
 
     <div class="about-text">
 
@@ -652,13 +708,17 @@
 
 
 
-    <!-- RIGHT -->
+    <!-- =========================
+         RIGHT / BID LOGO
+    ========================= -->
 
     <div class="identity">
 
-        <div class="bid-symbol">
-            BID
-        </div>
+        <img
+            src="./images/BIDLOGO.jpg"
+            alt="Bureau of International Defense insignia"
+            class="bid-logo"
+        >
 
         <div class="identity-line"></div>
 
@@ -697,11 +757,16 @@
     <div class="location-grid">
 
 
-        <!-- CITADEL -->
+        <!-- =========================
+             CITADEL
+        ========================= -->
 
         <a href="citadel.html" class="location">
 
-            <img src="citadel.jpg" alt="The Citadel">
+            <img
+                src="./images/citadel.jpg"
+                alt="The Citadel"
+            >
 
             <div class="location-info">
 
@@ -723,11 +788,16 @@
 
 
 
-        <!-- LOCATION 002 -->
+        <!-- =========================
+             LOCATION 002
+        ========================= -->
 
         <a href="location-002.html" class="location">
 
-            <img src="location-002.jpg" alt="BID Facility">
+            <img
+                src="./images/location-002.jpg"
+                alt="BID Facility"
+            >
 
             <div class="location-info">
 
@@ -749,11 +819,16 @@
 
 
 
-        <!-- LOCATION 003 -->
+        <!-- =========================
+             LOCATION 003
+        ========================= -->
 
         <a href="location-003.html" class="location">
 
-            <img src="location-003.jpg" alt="BID Facility">
+            <img
+                src="./images/location-003.jpg"
+                alt="BID Facility"
+            >
 
             <div class="location-info">
 
@@ -775,11 +850,16 @@
 
 
 
-        <!-- LOCATION 004 -->
+        <!-- =========================
+             LOCATION 004
+        ========================= -->
 
         <a href="location-004.html" class="location">
 
-            <img src="location-004.jpg" alt="BID Facility">
+            <img
+                src="./images/location-004.jpg"
+                alt="BID Facility"
+            >
 
             <div class="location-info">
 
@@ -805,6 +885,10 @@
 </section>
 
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
