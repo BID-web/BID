@@ -7,6 +7,10 @@
     <title>BID // Bureau of Internal Defense</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             background: #080a0c;
@@ -35,11 +39,8 @@
         }
 
         main {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 50px;
+            min-height: calc(100vh - 130px);
+            padding: 80px 50px;
             max-width: 1200px;
             margin: auto;
         }
@@ -69,12 +70,130 @@
             margin: 30px 0;
         }
 
+        /* DATABASE NAVIGATION */
+
+        .database {
+            margin-top: 70px;
+        }
+
+        .database-title {
+            color: #555b60;
+            font-size: 11px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            max-width: 800px;
+        }
+
+        .card {
+            border: 1px solid #252a2e;
+            background: #0c0f12;
+            padding: 25px;
+            text-decoration: none;
+            color: #d9dde0;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            border-color: #b91c1c;
+            background: #101316;
+            transform: translateY(-2px);
+        }
+
+        .card-number {
+            color: #b91c1c;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+
+        .card-title {
+            margin-top: 12px;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+
+        .card-description {
+            margin-top: 10px;
+            color: #686f74;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* SYSTEM INFORMATION */
+
+        .system {
+            margin-top: 60px;
+            border-top: 1px solid #252a2e;
+            padding-top: 25px;
+            max-width: 800px;
+        }
+
+        .system-title {
+            color: #555b60;
+            font-size: 10px;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .system-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #15191c;
+            font-size: 11px;
+        }
+
+        .system-label {
+            color: #555b60;
+        }
+
+        .system-value {
+            color: #858b90;
+        }
+
+        .online {
+            color: #4ade80;
+        }
+
         footer {
             padding: 20px 50px;
             border-top: 1px solid #252a2e;
             color: #555b60;
             font-size: 11px;
             letter-spacing: 2px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+            header {
+                padding: 20px;
+            }
+
+            main {
+                padding: 60px 20px;
+            }
+
+            footer {
+                padding: 20px;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .status {
+                font-size: 9px;
+            }
+
+            h1 {
+                letter-spacing: 5px;
+            }
         }
     </style>
 </head>
@@ -83,11 +202,18 @@
 
 <header>
     <div class="logo">BID</div>
-    <div class="status">● SYSTEM ONLINE</div>
+
+    <div class="status">
+        ● SYSTEM ONLINE
+    </div>
 </header>
 
+
 <main>
-    <div class="classified">BUREAU OF INTERNAL DEFENSE</div>
+
+    <div class="classified">
+        BUREAU OF INTERNAL DEFENSE
+    </div>
 
     <h1>WELCOME.</h1>
 
@@ -97,8 +223,128 @@
         CENTRAL DATABASE // AUTHORIZED PERSONNEL ONLY
         <br><br>
         Access to classified information is monitored and recorded.
+        Unauthorized access will be reported to Internal Security.
     </p>
+
+
+    <!-- DATABASE -->
+
+    <section class="database">
+
+        <div class="database-title">
+            DATABASE DIRECTORY //
+        </div>
+
+        <div class="grid">
+
+            <a class="card" href="personnel.html">
+
+                <div class="card-number">
+                    01 // PERSONNEL
+                </div>
+
+                <div class="card-title">
+                    PERSONNEL FILES
+                </div>
+
+                <div class="card-description">
+                    Personnel records, identification files,
+                    affiliations, assignments and psychological evaluations.
+                </div>
+
+            </a>
+
+
+            <a class="card" href="organizations.html">
+
+                <div class="card-number">
+                    02 // ORGANIZATIONS
+                </div>
+
+                <div class="card-title">
+                    ORGANIZATIONS
+                </div>
+
+                <div class="card-description">
+                    Government agencies, factions, organizations
+                    and other entities of interest.
+                </div>
+
+            </a>
+
+
+            <a class="card" href="history.html">
+
+                <div class="card-number">
+                    03 // HISTORY
+                </div>
+
+                <div class="card-title">
+                    HISTORICAL RECORDS
+                </div>
+
+                <div class="card-description">
+                    Major events, incidents, conflicts and
+                    documented historical records.
+                </div>
+
+            </a>
+
+
+            <a class="card" href="archives.html">
+
+                <div class="card-number">
+                    04 // ARCHIVES
+                </div>
+
+                <div class="card-title">
+                    CLASSIFIED ARCHIVES
+                </div>
+
+                <div class="card-description">
+                    Mission reports, case files, internal documents
+                    and restricted records.
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SYSTEM INFORMATION -->
+
+    <section class="system">
+
+        <div class="system-title">
+            SYSTEM INFORMATION //
+        </div>
+
+        <div class="system-row">
+            <span class="system-label">DATABASE STATUS</span>
+            <span class="system-value online">ONLINE</span>
+        </div>
+
+        <div class="system-row">
+            <span class="system-label">SECURITY STATUS</span>
+            <span class="system-value">ACTIVE</span>
+        </div>
+
+        <div class="system-row">
+            <span class="system-label">CLEARANCE</span>
+            <span class="system-value">AUTHORIZED</span>
+        </div>
+
+        <div class="system-row">
+            <span class="system-label">RECORDS INDEXED</span>
+            <span class="system-value">0047</span>
+        </div>
+
+    </section>
+
 </main>
+
 
 <footer>
     BID // INTERNAL DATABASE // SECURITY CLEARANCE REQUIRED
