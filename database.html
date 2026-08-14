@@ -588,12 +588,13 @@
 
             align-content: start;
 
-            gap: 0;
-
             border-top: 1px solid #252a2e;
         }
 
+
         .info-item {
+            min-height: 82px;
+
             padding: 17px 15px;
 
             border-bottom: 1px solid #252a2e;
@@ -603,6 +604,7 @@
         .info-item:nth-child(even) {
             border-right: none;
         }
+
 
         .info-label {
             margin-bottom: 8px;
@@ -616,6 +618,7 @@
             letter-spacing: 2px;
         }
 
+
         .info-value {
             color: #d9dde0;
 
@@ -626,9 +629,11 @@
             letter-spacing: 1px;
         }
 
+
         .active-value {
             color: #4ade80;
         }
+
 
         .omega {
             color: #b91c1c;
@@ -637,8 +642,15 @@
         }
 
 
+        .black-clearance {
+            color: #d9dde0;
+
+            font-weight: 600;
+        }
+
+
         /* =========================
-           PERSONNEL NOTES
+           NOTES
         ========================= */
 
         .personnel-notes {
@@ -649,17 +661,6 @@
             border-top: 1px solid #252a2e;
         }
 
-        .detail-label {
-            margin-bottom: 10px;
-
-            color: #555b60;
-
-            font-family: 'Orbitron', sans-serif;
-
-            font-size: 8px;
-
-            letter-spacing: 3px;
-        }
 
         .personnel-notes p {
             max-width: 900px;
@@ -696,6 +697,7 @@
             background: #0d0b0c;
         }
 
+
         .restricted-icon {
             width: 40px;
             height: 40px;
@@ -716,9 +718,11 @@
             font-size: 12px;
         }
 
+
         .restricted-text {
             flex: 1;
         }
+
 
         .restricted-title {
             color: #d9dde0;
@@ -730,6 +734,7 @@
             letter-spacing: 2px;
         }
 
+
         .restricted-subtitle {
             margin-top: 7px;
 
@@ -739,6 +744,7 @@
 
             letter-spacing: 1px;
         }
+
 
         .access-button {
             padding: 12px 18px;
@@ -759,6 +765,7 @@
 
             transition: 0.2s ease;
         }
+
 
         .access-button:hover {
             background: #b91c1c;
@@ -781,6 +788,18 @@
 
         .detail-section {
             margin-bottom: 32px;
+        }
+
+        .detail-label {
+            margin-bottom: 10px;
+
+            color: #555b60;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 8px;
+
+            letter-spacing: 3px;
         }
 
         .detail-text {
@@ -893,6 +912,8 @@
 
             .personnel-info {
                 grid-column: 1;
+
+                width: 100%;
             }
 
             .personnel-notes,
@@ -941,17 +962,29 @@
 
     <nav>
 
-        <a href="index.html">HOME</a>
+        <a href="index.html">
+            HOME
+        </a>
 
-        <a href="about.html">ABOUT</a>
+        <a href="about.html">
+            ABOUT
+        </a>
 
-        <a href="divisions.html">DIVISIONS</a>
+        <a href="divisions.html">
+            DIVISIONS
+        </a>
 
-        <a href="database.html" class="active">DATABASE</a>
+        <a href="database.html" class="active">
+            DATABASE
+        </a>
 
-        <a href="locations.html">LOCATIONS</a>
+        <a href="locations.html">
+            LOCATIONS
+        </a>
 
-        <a href="archive.html">ARCHIVE</a>
+        <a href="archive.html">
+            ARCHIVE
+        </a>
 
     </nav>
 
@@ -989,14 +1022,12 @@
     <section class="database-interface">
 
 
-        <!-- =====================
-             DIRECTORY
-        ====================== -->
+        <!-- =========================
+             LEFT DIRECTORY
+        ========================= -->
 
         <div class="directory">
 
-
-            <!-- TABS -->
 
             <div class="tabs">
 
@@ -1033,9 +1064,9 @@
 
 
 
-            <!-- =====================
+            <!-- =========================
                  PERSONNEL
-            ====================== -->
+            ========================= -->
 
             <div
                 class="card-list"
@@ -1043,9 +1074,7 @@
             >
 
 
-                <!-- =====================
-                     VESPER
-                ====================== -->
+                <!-- VESPER -->
 
                 <button
                     class="database-card selected"
@@ -1082,9 +1111,7 @@
 
 
 
-                <!-- =====================
-                     SORA
-                ====================== -->
+                <!-- SORA -->
 
                 <button
                     class="database-card"
@@ -1100,7 +1127,7 @@
                     <div class="card-info">
 
                         <div class="card-id">
-                            S-14
+                            S-12
                         </div>
 
                         <div class="card-name">
@@ -1108,7 +1135,7 @@
                         </div>
 
                         <div class="card-role">
-                            TECH ANALYST
+                            OPERATIVE
                         </div>
 
                     </div>
@@ -1121,9 +1148,7 @@
 
 
 
-                <!-- =====================
-                     REDACTED PERSONNEL
-                ====================== -->
+                <!-- THIRD PERSONNEL -->
 
                 <button
                     class="database-card"
@@ -1147,7 +1172,7 @@
                     <div class="card-info">
 
                         <div class="card-id">
-                            P-22
+                            P-03
                         </div>
 
                         <div class="card-name">
@@ -1155,7 +1180,7 @@
                         </div>
 
                         <div class="card-role">
-                            FIELD OPERATIVE
+                            PERSONNEL
                         </div>
 
                     </div>
@@ -1171,14 +1196,14 @@
 
 
 
-            <!-- =====================
+            <!-- =========================
                  RECORDS
-            ====================== -->
+            ========================= -->
 
             <div
                 class="card-list"
                 id="records-list"
-                style="display: none;"
+                style="display:none;"
             >
 
                 <button
@@ -1268,14 +1293,14 @@
 
 
 
-            <!-- =====================
+            <!-- =========================
                  EQUIPMENT
-            ====================== -->
+            ========================= -->
 
             <div
                 class="card-list"
                 id="equipment-list"
-                style="display: none;"
+                style="display:none;"
             >
 
                 <button
@@ -1363,13 +1388,14 @@
 
             </div>
 
+
         </div>
 
 
 
         <!-- =========================
              RIGHT DETAIL PANEL
-        ========================== -->
+        ========================= -->
 
         <div class="details">
 
@@ -1377,7 +1403,7 @@
             <div
                 class="detail-placeholder"
                 id="detail-placeholder"
-                style="display: none;"
+                style="display:none;"
             >
                 SELECT A RECORD TO VIEW
             </div>
@@ -1386,7 +1412,7 @@
 
             <!-- ==================================================
                  VESPER
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content visible"
@@ -1503,11 +1529,11 @@
                         <div class="info-item">
 
                             <div class="info-label">
-                                PERSONNEL DESIGNATION
+                                ASSIGNMENT STATUS
                             </div>
 
                             <div class="info-value">
-                                V-07
+                                ACTIVE DUTY
                             </div>
 
                         </div>
@@ -1529,11 +1555,11 @@
                         <div class="info-item">
 
                             <div class="info-label">
-                                REGISTRY STATUS
+                                PRIMARY PARTNER
                             </div>
 
                             <div class="info-value">
-                                ACTIVE FILE
+                                S-12
                             </div>
 
                         </div>
@@ -1542,8 +1568,6 @@
                     </div>
 
 
-
-                    <!-- NOTES -->
 
                     <div class="personnel-notes">
 
@@ -1553,34 +1577,31 @@
 
                         <p>
 
-                            V-07 is an active field operative assigned
-                            to specialized operations under BID
-                            jurisdiction.
+                            V-07 is an active field operative
+                            assigned to specialized operations
+                            under BID jurisdiction.
 
                             <br><br>
 
                             Personnel are advised to maintain
                             operational discretion when interacting
-                            with V-07. Additional information regarding
-                            assignment history, psychological
-                            evaluation, and operational records
-                            remains restricted.
+                            with V-07. Assignment history,
+                            psychological evaluation, and
+                            operational records remain restricted.
 
                             <br><br>
 
-                            <span style="color:#b91c1c;">
-                                NOTE: V-07's original personnel
-                                designation has been sealed by
-                                Internal Security.
-                            </span>
+                            V-07 maintains a standing operational
+                            partnership with S-12. The pairing is
+                            considered one of BID Field Operations'
+                            most consistently successful active
+                            configurations.
 
                         </p>
 
                     </div>
 
 
-
-                    <!-- RESTRICTED ACCESS -->
 
                     <div class="restricted-access">
 
@@ -1603,7 +1624,7 @@
 
                         <button
                             class="access-button"
-                            onclick="requestAccess()"
+                            onclick="requestAccess('vesper')"
                         >
                             ACCESS FILE
                         </button>
@@ -1619,7 +1640,7 @@
 
             <!-- ==================================================
                  SORA
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1631,7 +1652,7 @@
                     <div>
 
                         <div class="detail-category">
-                            PERSONNEL // S-14
+                            PERSONNEL // S-12
                         </div>
 
                         <h2 class="detail-name">
@@ -1639,7 +1660,7 @@
                         </h2>
 
                         <div class="detail-role">
-                            TECH ANALYST // CYBER INTELLIGENCE
+                            FIELD OPERATIVE // SPECIAL OPERATIONS
                         </div>
 
                     </div>
@@ -1675,7 +1696,7 @@
                             </div>
 
                             <div class="info-value">
-                                TECH ANALYST
+                                OPERATIVE
                             </div>
 
                         </div>
@@ -1688,7 +1709,7 @@
                             </div>
 
                             <div class="info-value">
-                                CYBER INTELLIGENCE
+                                FIELD OPERATIONS
                             </div>
 
                         </div>
@@ -1701,7 +1722,7 @@
                             </div>
 
                             <div class="info-value">
-                                ANALYST II
+                                OPERATIVE
                             </div>
 
                         </div>
@@ -1726,8 +1747,8 @@
                                 CLEARANCE LEVEL
                             </div>
 
-                            <div class="info-value">
-                                SIGMA
+                            <div class="info-value black-clearance">
+                                BLACK
                             </div>
 
                         </div>
@@ -1736,11 +1757,11 @@
                         <div class="info-item">
 
                             <div class="info-label">
-                                PERSONNEL DESIGNATION
+                                ASSIGNMENT STATUS
                             </div>
 
                             <div class="info-value">
-                                S-14
+                                ACTIVE DUTY
                             </div>
 
                         </div>
@@ -1762,11 +1783,11 @@
                         <div class="info-item">
 
                             <div class="info-label">
-                                REGISTRY STATUS
+                                PRIMARY PARTNER
                             </div>
 
                             <div class="info-value">
-                                ACTIVE FILE
+                                V-07
                             </div>
 
                         </div>
@@ -1775,8 +1796,6 @@
                     </div>
 
 
-
-                    <!-- SORA NOTES -->
 
                     <div class="personnel-notes">
 
@@ -1786,32 +1805,30 @@
 
                         <p>
 
-                            S-14 is assigned to BID Cyber Intelligence,
-                            specializing in digital surveillance,
-                            communications interception, systems
-                            analysis, and electronic countermeasures.
+                            S-12 is an active field operative
+                            assigned to Special Operations under
+                            BID Field Operations.
 
                             <br><br>
 
-                            Sora has demonstrated an unusually high
-                            tolerance for prolonged surveillance
-                            operations and maintains direct access to
-                            several internal monitoring systems.
+                            S-12 serves as the primary mission
+                            partner to V-07. Joint deployment
+                            authorization has been maintained
+                            across multiple operational theatres.
 
                             <br><br>
 
-                            Despite holding a non-field designation,
-                            S-14 has been temporarily attached to
-                            multiple operational teams where technical
-                            support was deemed mission-critical.
+                            Performance records indicate strong
+                            adaptability under hostile conditions,
+                            with particular value placed on
+                            operational coordination and field
+                            support.
 
                         </p>
 
                     </div>
 
 
-
-                    <!-- RESTRICTED ACCESS -->
 
                     <div class="restricted-access">
 
@@ -1834,7 +1851,7 @@
 
                         <button
                             class="access-button"
-                            onclick="requestSoraAccess()"
+                            onclick="requestAccess('sora')"
                         >
                             ACCESS FILE
                         </button>
@@ -1849,8 +1866,8 @@
 
 
             <!-- ==================================================
-                 REDACTED PERSONNEL
-            =================================================== -->
+                 PERSON THREE
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1862,7 +1879,7 @@
                     <div>
 
                         <div class="detail-category">
-                            PERSONNEL // P-22
+                            PERSONNEL // P-03
                         </div>
 
                         <h2 class="detail-name">
@@ -1870,7 +1887,7 @@
                         </h2>
 
                         <div class="detail-role">
-                            FIELD OPERATIVE
+                            PERSONNEL
                         </div>
 
                     </div>
@@ -1904,7 +1921,7 @@
 
             <!-- ==================================================
                  RECORD ONE
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -1959,7 +1976,7 @@
 
             <!-- ==================================================
                  RECORD TWO
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -2014,7 +2031,7 @@
 
             <!-- ==================================================
                  EQUIPMENT ONE
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -2068,7 +2085,7 @@
 
             <!-- ==================================================
                  EQUIPMENT TWO
-            =================================================== -->
+            ================================================== -->
 
             <div
                 class="detail-content"
@@ -2148,9 +2165,9 @@
 <script>
 
 
-    /* ==================================================
+    /* =========================
        SWITCH DATABASE TABS
-    ================================================== */
+    ========================= */
 
     function showTab(tab, button) {
 
@@ -2167,7 +2184,9 @@
         const tabs = document.querySelectorAll(".tab");
 
         tabs.forEach(function(item) {
+
             item.classList.remove("active");
+
         });
 
         button.classList.add("active");
@@ -2209,9 +2228,9 @@
 
 
 
-    /* ==================================================
+    /* =========================
        SHOW DATABASE ENTRY
-    ================================================== */
+    ========================= */
 
     function showDetail(id, card) {
 
@@ -2242,15 +2261,15 @@
 
 
 
-    /* ==================================================
-       VESPER RESTRICTED FILE
-    ================================================== */
+    /* =========================
+       RESTRICTED FILE ACCESS
+    ========================= */
 
-    function requestAccess() {
+    function requestAccess(person) {
 
-        const password = prompt(
+        let password = prompt(
             "BID INTERNAL SECURITY\n\n" +
-            "RESTRICTED PERSONNEL FILE: V-07\n\n" +
+            "RESTRICTED PERSONNEL FILE\n\n" +
             "ENTER AUTHORIZATION CODE:"
         );
 
@@ -2260,14 +2279,25 @@
         }
 
 
-        if (password === "OMEGA-07") {
+        if (person === "vesper" && password === "OMEGA-07") {
 
             alert(
                 "ACCESS GRANTED.\n\n" +
-                "Additional V-07 records unlocked."
+                "V-07 // ADDITIONAL RECORDS UNLOCKED."
             );
 
-        } else {
+        }
+
+        else if (person === "sora" && password === "BLACK-12") {
+
+            alert(
+                "ACCESS GRANTED.\n\n" +
+                "S-12 // ADDITIONAL RECORDS UNLOCKED."
+            );
+
+        }
+
+        else {
 
             alert(
                 "ACCESS DENIED.\n\n" +
@@ -2277,45 +2307,6 @@
         }
 
     }
-
-
-
-    /* ==================================================
-       SORA RESTRICTED FILE
-    ================================================== */
-
-    function requestSoraAccess() {
-
-        const password = prompt(
-            "BID INTERNAL SECURITY\n\n" +
-            "RESTRICTED PERSONNEL FILE: S-14\n\n" +
-            "ENTER AUTHORIZATION CODE:"
-        );
-
-
-        if (password === null) {
-            return;
-        }
-
-
-        if (password === "SIGMA-14") {
-
-            alert(
-                "ACCESS GRANTED.\n\n" +
-                "Additional S-14 records unlocked."
-            );
-
-        } else {
-
-            alert(
-                "ACCESS DENIED.\n\n" +
-                "INSUFFICIENT CLEARANCE."
-            );
-
-        }
-
-    }
-
 
 </script>
 
